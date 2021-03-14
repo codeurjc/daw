@@ -9,10 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
-import org.hibernate.annotations.DynamicUpdate;
-
 @Entity
-@DynamicUpdate
 public class Book {
 
 	@Id
