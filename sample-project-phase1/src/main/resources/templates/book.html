@@ -12,6 +12,17 @@
   <div>
     <p>{{book.description}}</p>
   </div>
+
+  <p> <b>Shops where book is available:</b></p>
+  <div>
+    <ul>
+      {{#book.shops}}
+      <li>
+        {{name}}
+      </li>
+      {{/book.shops}}
+    </ul>
+  </div>
   <p>
     {{#logged}}
 

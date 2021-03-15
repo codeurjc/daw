@@ -1,6 +1,7 @@
 package es.codeurjc.daw.library.model;
 
 import java.sql.Blob;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,11 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-
-import org.hibernate.annotations.DynamicUpdate;
+import javax.persistence.ManyToMany;
 
 @Entity
-@DynamicUpdate
 public class Book {
 
 	@Id
@@ -29,13 +28,10 @@ public class Book {
 
 	private boolean image;
 
-	public Book() {}
+	@ManyToMany
+ 	private List<Shop> shops;
 
-	public Book(String nombre, String description) {
-		super();
-		this.title = nombre;
-		this.description = description;
-	}
+	public Book() {}
 
 	public String getTitle() {
 		return title;
@@ -80,6 +76,20 @@ public class Book {
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", title=" + title + ", description=" + description + "]";
+	}
+
+	public Book(String nombre, String description) {
+		super();
+		this.title = nombre;
+		this.description = description;
+	}
+
+	public List<Shop> getShops() {
+		return shops;
+	}
+
+	public void setShops(List<Shop> shops) {
+		this.shops = shops;
 	}
 
 }

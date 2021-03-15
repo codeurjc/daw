@@ -2,10 +2,6 @@ package es.codeurjc.daw.library.service;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import javax.annotation.PostConstruct;
 
@@ -17,8 +13,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import es.codeurjc.daw.library.model.Book;
+import es.codeurjc.daw.library.model.Shop;
 import es.codeurjc.daw.library.model.User;
 import es.codeurjc.daw.library.repository.BookRepository;
+import es.codeurjc.daw.library.repository.ShopRepository;
 import es.codeurjc.daw.library.repository.UserRepository;
 
 @Service
@@ -26,6 +24,9 @@ public class DatabaseInitializer {
 
 	@Autowired
 	private BookRepository bookRepository;
+
+	@Autowired
+	private ShopRepository shopRepository;
 
 	@Autowired
 	private UserRepository userRepository;
@@ -58,6 +59,12 @@ public class DatabaseInitializer {
 
 		bookRepository.save(new Book("LA LEGIÓN PERDIDA",
 				"En el año 53 a. C. el cónsul Craso cruzó el Éufrates para conquistar Oriente, pero su ejército fue destrozado en Carrhae. Una legión entera cayó prisionera de los partos. Nadie sabe a ciencia cierta qué pasó con aquella legión perdida.150 años después, Trajano está a punto de volver a cruzar el Éufrates. ..."));
+
+		// Sample Shops
+
+		shopRepository.save(new Shop("La casa del libro", "C/Falsa 123"));
+		shopRepository.save(new Shop("FNAC", "C/Falsa 456"));
+
 
 		// Sample users
 
