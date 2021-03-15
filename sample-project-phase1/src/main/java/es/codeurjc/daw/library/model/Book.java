@@ -33,6 +33,12 @@ public class Book {
 
 	public Book() {}
 
+	public Book(String nombre, String description) {
+		super();
+		this.title = nombre;
+		this.description = description;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -73,17 +79,6 @@ public class Book {
 		this.image = image;
 	}
 
-	@Override
-	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", description=" + description + "]";
-	}
-
-	public Book(String nombre, String description) {
-		super();
-		this.title = nombre;
-		this.description = description;
-	}
-
 	public List<Shop> getShops() {
 		return shops;
 	}
@@ -92,4 +87,8 @@ public class Book {
 		this.shops = shops;
 	}
 
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", title=" + title + ", description=" + description + "]";
+	}
 }

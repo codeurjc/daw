@@ -27,6 +27,10 @@ public class Shop {
 
 	public Shop() {}
 
+	public Shop(String name, String address) {
+		this.name = name;
+		this.address = address;
+	}
 
 	public Long getId() {
 		return id;
@@ -61,11 +65,4 @@ public class Shop {
 	public void setBooks(List<Book> books) {
 		this.books = books;
 	}
-
-
-	public Shop(String name, String address) {
-		this.name = name;
-		this.address = address;
-	}
-
 }
