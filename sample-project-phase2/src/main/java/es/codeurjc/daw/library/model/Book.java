@@ -1,10 +1,15 @@
 package es.codeurjc.daw.library.model;
 
+import java.sql.Blob;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Book {
@@ -12,14 +17,21 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id = null;
-
+	
 	private String title;
-
-	@Column(length = 50000)
+	
+	@Column(columnDefinition = "TEXT")
 	private String description;
 
-	public Book() {
-	}
+	@Lob
+	private Blob imageFile;
+
+	private boolean image;
+
+	@ManyToMany
+ 	private List<Shop> shops;
+
+	public Book() {}
 
 	public Book(String nombre, String description) {
 		super();
@@ -51,9 +63,32 @@ public class Book {
 		this.id = id;
 	}
 
+	public Blob getImageFile() {
+		return imageFile;
+	}
+
+	public void setImageFile(Blob image) {
+		this.imageFile = image;
+	}
+
+	public boolean hasImage(){
+		return this.image;
+	}
+
+	public void setImage(boolean image){
+		this.image = image;
+	}
+
+	public List<Shop> getShops() {
+		return shops;
+	}
+
+	public void setShops(List<Shop> shops) {
+		this.shops = shops;
+	}
+
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", title=" + title + ", description=" + description + "]";
 	}
-
 }

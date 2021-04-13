@@ -18,7 +18,7 @@ public class BookService {
 	public Optional<Book> findById(long id) {
 		return repository.findById(id);
 	}
-
+	
 	public boolean exist(long id) {
 		return repository.existsById(id);
 	}
