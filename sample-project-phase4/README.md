@@ -19,7 +19,7 @@ El código del backend está situado en la carpeta `sample-project-phase3`.
 Podemos ejecutar la aplicación desde un IDE (Eclipse, Visual Studio Code, IntelliJ...) o desde la línea de comandos usando Maven:
 
 ```
-cd `sample-project-phase3`
+cd sample-project-phase3
 mvn spring-boot:run
 ```
 
@@ -28,7 +28,7 @@ mvn spring-boot:run
 Nos situamos en la carpeta `sample-project-phase4`
 
 ```
-cd `sample-project-phase4`
+cd sample-project-phase4
 ```
 
 Instalamos las dependencias:
