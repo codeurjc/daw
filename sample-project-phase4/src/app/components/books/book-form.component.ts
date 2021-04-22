@@ -54,9 +54,9 @@ export class BookFormComponent {
 
   save() {
     this.service.addBook(this.book).subscribe(
-      (book:Book) => this.router.navigate(['/books/', book.id]),
+      (book: Book) => this.router.navigate(['/books/', book.id]),
       error => alert('Error creating new book: ' + error)
     );
-    
+
   }
 }

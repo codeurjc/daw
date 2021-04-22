@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Book } from '../models/book.model';
@@ -25,14 +25,14 @@ export class BooksService {
 	}
 
 	addBook(book: Book) {
-		
+
 		if (!book.id) {
 			return this.httpClient.post(BASE_URL, book)
-			.pipe(
-				catchError(error => this.handleError(error))
-			);
+				.pipe(
+					catchError(error => this.handleError(error))
+				);
 		} else {
-			return this.httpClient.put(BASE_URL+book.id, book).pipe(
+			return this.httpClient.put(BASE_URL + book.id, book).pipe(
 				catchError(error => this.handleError(error))
 			);
 		}
@@ -53,6 +53,6 @@ export class BooksService {
 	private handleError(error: any) {
 		console.log("ERROR:");
 		console.error(error);
-		return Observable.throw("Server error (" + error.status + "): " + error.text())
+		return throwError("Server error (" + error.status + "): " + error.text())
 	}
 }

@@ -6,7 +6,7 @@ import { BooksService } from './../../services/books.service';
 
 
 @Component({
-    template: `
+  template: `
     <h2>Books</h2>
     <ul class="items">
       <li *ngFor="let book of books">
@@ -18,18 +18,18 @@ import { BooksService } from './../../services/books.service';
 })
 export class BookListComponent implements OnInit {
 
-    books: Book[];
+  books: Book[];
 
-    constructor(private router:Router, private service: BooksService, public loginService: LoginService) {}
+  constructor(private router: Router, private service: BooksService, public loginService: LoginService) { }
 
-    ngOnInit(){
-      this.service.getBooks().subscribe(
-        books => this.books = books,
-        error => console.log(error)
-      );
-    }
+  ngOnInit() {
+    this.service.getBooks().subscribe(
+      books => this.books = books,
+      error => console.log(error)
+    );
+  }
 
-    newBook() {
-      this.router.navigate(['/books/new']);
-    }
+  newBook() {
+    this.router.navigate(['/books/new']);
+  }
 }

@@ -32,17 +32,17 @@ export class LoginService {
 
     logIn(user: string, pass: string) {
 
-        this.http.post(BASE_URL+"/login", {username: user, password: pass}, { withCredentials: true })
+        this.http.post(BASE_URL + "/login", { username: user, password: pass }, { withCredentials: true })
             .subscribe(
-                (response) =>  this.reqIsLogged(),
+                (response) => this.reqIsLogged(),
                 (error) => alert("Wrong credentials")
-        );
+            );
 
     }
 
     logOut() {
 
-        return this.http.post(BASE_URL+ '/logout', { withCredentials: true })
+        return this.http.post(BASE_URL + '/logout', { withCredentials: true })
             .subscribe((resp: any) => {
                 console.log("LOGOUT: Successfully");
                 this.logged = false;
@@ -51,15 +51,15 @@ export class LoginService {
 
     }
 
-    isLogged(){
+    isLogged() {
         return this.logged;
     }
 
-    isAdmin(){
+    isAdmin() {
         return this.user && this.user.roles.indexOf('ADMIN') !== -1;
     }
 
-    currentUser(){
+    currentUser() {
         return this.user;
     }
 }
