@@ -1,5 +1,6 @@
 export interface Book {
 	id?: number;
 	title: string;
-	description: string;	
+	description: string;
+	image: boolean;
 }

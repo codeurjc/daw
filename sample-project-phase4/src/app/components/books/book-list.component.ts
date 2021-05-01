@@ -6,15 +6,7 @@ import { BooksService } from './../../services/books.service';
 
 
 @Component({
-  template: `
-    <h2>Books</h2>
-    <ul class="items">
-      <li *ngFor="let book of books">
-        <a [routerLink]="['/books', book.id]">{{book.title}}</a>
-      </li>
-    </ul>
-    <button *ngIf="loginService.isLogged()" (click)="newBook()">New book</button>
-  `
+  templateUrl: './book-list.component.html'
 })
 export class BookListComponent implements OnInit {
 

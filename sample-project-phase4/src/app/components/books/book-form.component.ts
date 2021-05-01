@@ -1,34 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { BooksService } from './../../services/books.service';
 import { Book } from './../../models/book.model';
 
 @Component({
-  template: `
-  <div *ngIf="book">
-  <h2>Book "{{book.title}}"</h2>
-  <div *ngIf="book.id">
-    <label>Id: </label>{{book.id}}
-  </div>
-  <div>
-    <label>Title: </label>
-    <input [(ngModel)]="book.title" placeholder="title"/>
-  </div>
-  <div>
-    <label>Abstract: </label>
-    <textarea [(ngModel)]="book.description" placeholder="description"></textarea>
-  </div>
-  <p>
-    <button (click)="cancel()">Cancel</button>
-    <button (click)="save()">Save</button>
-  </p>
-  </div>`
+  templateUrl: './book-form.component.html'
 })
 export class BookFormComponent {
 
   newBook: boolean;
   book: Book;
+
+  @ViewChild("file")
+  file: any;
+
+  removeImage:boolean;
 
   constructor(
     private router: Router,
@@ -43,7 +30,7 @@ export class BookFormComponent {
       );
       this.newBook = false;
     } else {
-      this.book = { title: '', description: '' };
+      this.book = { title: '', description: '', image: false };
       this.newBook = true;
     }
   }
@@ -53,10 +40,42 @@ export class BookFormComponent {
   }
 
   save() {
+    if(this.book.image && this.removeImage){
+      this.book.image = false;
+    }
     this.service.addBook(this.book).subscribe(
-      (book: Book) => this.router.navigate(['/books/', book.id]),
+      (book: Book) => this.uploadImage(book),
       error => alert('Error creating new book: ' + error)
     );
+  }
 
+  uploadImage(book: Book): void {
+
+    const image = this.file.nativeElement.files[0];
+    if (image) {
+      let formData = new FormData();
+      formData.append("imageFile", image);
+      this.service.setBookImage(book, formData).subscribe(
+        _ => this.afterUploadImage(book),
+        error => alert('Error uploading book image: ' + error)
+      );
+    } else if(this.removeImage){
+      this.service.deleteBookImage(book).subscribe(
+        _ => this.afterUploadImage(book),
+        error => alert('Error deleting book image: ' + error)
+      );
+    } else {
+      this.afterUploadImage(book);
+    }
+  }
+
+  private afterUploadImage(book: Book){
+    this.router.navigate(['/books/', book.id]);
+  }
+
+  bookImage() {
+    return this.book.image ? '/api/books/' + this.book.id + '/image' : '/assets/images/no_image.png';
   }
 }
+
+

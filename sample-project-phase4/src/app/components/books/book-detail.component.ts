@@ -6,19 +6,7 @@ import { Book } from '../../models/book.model';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
-    template: `
-  <div *ngIf="book">
-  <h2>Book "{{book.title}}"</h2>
-  <div>
-    <p>{{book.description}}</p>
-  </div>
-  <p>
-    <button *ngIf="loginService.isLogged() && loginService.isAdmin()" (click)="removeBook()">Remove</button>
-    <button *ngIf="loginService.isLogged()" (click)="editBook()">Edit</button>
-    <br>
-    <button (click)="gotoBooks()">All Books</button>
-  </p>
-  </div>`
+    templateUrl: './book-detail.component.html'
 })
 export class BookDetailComponent {
 
@@ -37,7 +25,7 @@ export class BookDetailComponent {
     removeBook() {
         const okResponse = window.confirm('Do you want to remove this book?');
         if (okResponse) {
-            this.service.removeBook(this.book).subscribe(
+            this.service.deleteBook(this.book).subscribe(
                 _ => this.router.navigate(['/books']),
                 error => console.error(error)
             );
@@ -50,5 +38,9 @@ export class BookDetailComponent {
 
     gotoBooks() {
         this.router.navigate(['/books']);
+    }
+
+    bookImage(){
+        return this.book.image? '/api/books/'+this.book.id+'/image' : '/assets/images/no_image.png';
     }
 }
