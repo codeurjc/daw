@@ -1,10 +1,15 @@
 package es.codeurjc.daw.library.model;
 
+import java.sql.Blob;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Book {
@@ -17,6 +22,12 @@ public class Book {
 
 	@Column(length = 50000)
 	private String description;
+
+	@Lob
+	@JsonIgnore
+	private Blob imageFile;
+
+	private boolean image;
 
 	public Book() {
 	}
@@ -49,6 +60,22 @@ public class Book {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public Blob getImageFile() {
+		return imageFile;
+	}
+
+	public void setImageFile(Blob image) {
+		this.imageFile = image;
+	}
+
+	public boolean getImage() {
+		return this.image;
+	}
+
+	public void setImage(boolean image) {
+		this.image = image;
 	}
 
 	@Override
