@@ -71,7 +71,7 @@ public class Book {
 		this.imageFile = image;
 	}
 
-	public boolean hasImage(){
+	public boolean getImage(){
 		return this.image;
 	}
 

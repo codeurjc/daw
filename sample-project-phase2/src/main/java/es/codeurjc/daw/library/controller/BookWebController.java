@@ -162,7 +162,7 @@ public class BookWebController {
 			} else {
 				// Maintain the same image loading it before updating the book
 				Book dbBook = bookService.findById(book.getId()).orElseThrow();
-				if (dbBook.hasImage()) {
+				if (dbBook.getImage()) {
 					book.setImageFile(BlobProxy.generateProxy(dbBook.getImageFile().getBinaryStream(),
 							dbBook.getImageFile().length()));
 					book.setImage(true);
