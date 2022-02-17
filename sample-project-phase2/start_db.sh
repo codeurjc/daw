@@ -1,1 +1,1 @@
-docker run --rm -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=books -p 3306:3306 -d mysql:8.0.22
+docker run --rm -e POSTGRES_PASSWORD=password -e POSTGRES_DB=books -p 5432:5432 -d postgres:14.2
