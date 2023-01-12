@@ -18,7 +18,7 @@ Por defecto el proyecto require una base de datos MySQL disponible en localhost 
 Se puede arrancar usando docker con el comando:
 
 ```
-$ docker run --rm -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=books -p 5432:5432 -d mysql:8.0
+$ docker run --rm -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=books -p 3306:3306 -d mysql:8.0
 ```
 
 La aplicación se ejecuta con el comando:
