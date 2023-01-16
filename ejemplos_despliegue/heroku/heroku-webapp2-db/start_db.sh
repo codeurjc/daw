@@ -1,0 +1,1 @@
+docker run --rm -e POSTGRES_PASSWORD=password -e POSTGRES_DB=books -p 5432:5432 -d postgres:14.2
