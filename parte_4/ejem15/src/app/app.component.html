@@ -1,0 +1,12 @@
+<h1>Google Books</h1>
+
+<input #title type="text"><button (click)="search(title.value); title.value=''">Buscar</button>
+
+<div *ngIf="$titles | async as titles; else loading">
+    <p *ngFor="let title of titles">{{title}}</p>
+    <p>{{titles.length}} total books</p>
+</div>
+
+<ng-template #loading>
+    <p *ngIf="$titles !== undefined">Loading...</p>
+</ng-template>

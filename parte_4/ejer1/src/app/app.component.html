@@ -1,0 +1,6 @@
+<input type="text" [(ngModel)]="fieldText">
+<button (click)='addItem()'>Add</button>
+
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
