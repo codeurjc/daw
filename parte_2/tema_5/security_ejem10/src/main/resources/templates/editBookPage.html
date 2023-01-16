@@ -1,0 +1,21 @@
+{{>header}}
+
+  <form action="/editbook" method="post">
+  <h2>Book "{{book.title}}"</h2>
+  <input type="hidden" name="id" value="{{book.id}}"/>
+  <div>
+    <label>Title: </label>
+    <input name="title" value="{{book.title}}" placeholder="title"/>
+  </div>
+  <div>
+    <label>Abstract: </label>
+    <textarea name="description" placeholder="description">{{book.description}}</textarea>
+  </div>
+   <input type="hidden" name="_csrf" value="{{token}}"/>
+  <p>
+    <button onclick="location.href='/book/{{book.id}}'; return false;">Cancel</button>
+    <input type="submit" value="Save"/>
+  </p>
+  </form>
+  
+{{>footer}}
