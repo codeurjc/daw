@@ -42,4 +42,4 @@ Los ejemplos y ejercicios de esta parte pueden encontrarse en [Parte 4](parte_4)
 
 ### Proyectos de ejemplo
 
-El objetivo de la asignatura es que los alumnos desarrollen una aplicación web como si estuvieran trabajando profesionalmente. Los alumnos desarrollaran la aplicación web en grupos, y sera entregada por fases. Podemos encontrar proyectos de ejemplo de las diferentes fases de la práctica en [Proyectos de Ejemplo](proyectos_de_ejemplo)
+El objetivo de la asignatura es que los alumnos desarrollen una aplicación web como si estuvieran trabajando profesionalmente. Los alumnos desarrollarán la aplicación web en grupos, y será entregada por fases. Podemos encontrar proyectos de ejemplo de las diferentes fases de la práctica en [Proyectos de Ejemplo](proyectos_de_ejemplo)
