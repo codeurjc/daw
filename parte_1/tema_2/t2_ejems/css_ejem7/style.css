@@ -1,0 +1,22 @@
+.button {
+    border-radius: 10px;
+    border: 2px solid #003593;
+    background-color: #6ba3ea;
+    height: 50px;
+    width: 140px;
+    margin: auto;
+    text-align: center;
+    margin: 10px;
+}
+.button a {
+    font-size: 0.7em;
+    text-decoration: none;
+    color: #003593;
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+}
+.button img {
+    width: 20px;
+}
