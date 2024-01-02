@@ -1,60 +1,63 @@
 package es.codeurjc.security;
 
-import java.security.SecureRandom;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+@EnableWebSecurity
+public class SecurityConfiguration {
 
 	@Autowired
-	RepositoryUserDetailsService userDetailsService;
+    public RepositoryUserDetailsService userDetailService;
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder(10, new SecureRandom());
+		return new BCryptPasswordEncoder();
 	}
 
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+	@Bean
+	public DaoAuthenticationProvider authenticationProvider() {
+		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
 
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+		authProvider.setUserDetailsService(userDetailService);
+		authProvider.setPasswordEncoder(passwordEncoder());
+
+		return authProvider;
 	}
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		
+		http.authenticationProvider(authenticationProvider());
+		
+		http
+			.authorizeHttpRequests(authorize -> authorize
+					// PUBLIC PAGES
+					.requestMatchers("/").permitAll()
+					// PRIVATE PAGES
+					.requestMatchers("/private").hasAnyRole("USER")
+					.requestMatchers("/admin").hasAnyRole("ADMIN")
+			)
+			.formLogin(formLogin -> formLogin
+					.loginPage("/login")
+					.failureUrl("/loginerror")
+					.defaultSuccessUrl("/private")
+					.permitAll()
+			)
+			.logout(logout -> logout
+					.logoutUrl("/logout")
+					.logoutSuccessUrl("/")
+					.permitAll()
+			);
 
-		// Public pages
-		http.authorizeRequests().antMatchers("/").permitAll();
-		http.authorizeRequests().antMatchers("/login").permitAll();
-		http.authorizeRequests().antMatchers("/loginerror").permitAll();
-		http.authorizeRequests().antMatchers("/logout").permitAll();
-
-		// Private pages (all other pages)
-		http.authorizeRequests().antMatchers("/private").hasAnyRole("USER");
-		http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
-
-		// Login form
-		http.formLogin().loginPage("/login");
-		http.formLogin().usernameParameter("username");
-		http.formLogin().passwordParameter("password");
-		http.formLogin().defaultSuccessUrl("/private");
-		http.formLogin().failureUrl("/loginerror");
-
-		// Logout
-		http.logout().logoutUrl("/logout");
-		http.logout().logoutSuccessUrl("/");
-
-		// Allow H2 console
-		http.authorizeRequests().antMatchers("/h2-console/**").permitAll();
-		http.headers().frameOptions().sameOrigin();
-
+		return http.build();
 	}
+
 }
