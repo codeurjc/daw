@@ -1,6 +1,5 @@
 package es.codeurjc.daw.library.service;
 
-import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -10,6 +9,7 @@ import es.codeurjc.daw.library.model.Book;
 import es.codeurjc.daw.library.model.User;
 import es.codeurjc.daw.library.repository.BookRepository;
 import es.codeurjc.daw.library.repository.UserRepository;
+import jakarta.annotation.PostConstruct;
 
 @Service
 public class DatabaseInitializer {

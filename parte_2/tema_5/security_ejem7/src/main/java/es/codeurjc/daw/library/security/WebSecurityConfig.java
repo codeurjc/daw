@@ -1,56 +1,66 @@
 package es.codeurjc.daw.library.security;
 
-import java.security.SecureRandom;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+@EnableWebSecurity
+public class WebSecurityConfig {
 
 	@Autowired
-	RepositoryUserDetailsService userDetailsService;
-	
+    public RepositoryUserDetailsService userDetailService;
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder(10, new SecureRandom());
+		return new BCryptPasswordEncoder();
 	}
 
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+	@Bean
+	public DaoAuthenticationProvider authenticationProvider() {
+		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
 
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+		authProvider.setUserDetailsService(userDetailService);
+		authProvider.setPasswordEncoder(passwordEncoder());
+
+		return authProvider;
 	}
-    
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-    	
-    	// Public pages
-        http.authorizeRequests().antMatchers("/").permitAll();
-        http.authorizeRequests().antMatchers("/login").permitAll();
-        http.authorizeRequests().antMatchers("/loginerror").permitAll();
-        http.authorizeRequests().antMatchers("/logout").permitAll();
 
-        // Private pages
-        http.authorizeRequests().antMatchers("/newbook").hasAnyRole("USER");
-        http.authorizeRequests().antMatchers("/editbook/*").hasAnyRole("USER");
-        http.authorizeRequests().antMatchers("/removebook/*").hasAnyRole("ADMIN");
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		
+		http.authenticationProvider(authenticationProvider());
+		
+		http
+			.authorizeHttpRequests(authorize -> authorize
+					// PUBLIC PAGES
+					.requestMatchers("/").permitAll()
+                    .requestMatchers("/books/*").permitAll()
+					// PRIVATE PAGES
+					.requestMatchers("/newbook").hasAnyRole("USER")
+                    .requestMatchers("/editbook/*").hasAnyRole("USER")
+                    .requestMatchers("/editbook").hasAnyRole("USER")
+					.requestMatchers("/removebook/*").hasAnyRole("ADMIN")
+			)
+			.formLogin(formLogin -> formLogin
+					.loginPage("/login")
+					.failureUrl("/loginerror")
+					.defaultSuccessUrl("/")
+					.permitAll()
+			)
+			.logout(logout -> logout
+					.logoutUrl("/logout")
+					.logoutSuccessUrl("/")
+					.permitAll()
+			);
 
-        // Login form
-        http.formLogin().loginPage("/login");
-        http.formLogin().usernameParameter("username");
-        http.formLogin().passwordParameter("password");
-        http.formLogin().defaultSuccessUrl("/");
-        http.formLogin().failureUrl("/loginerror");
+		return http.build();
+	}
 
-        // Logout
-        http.logout().logoutUrl("/logout");
-        http.logout().logoutSuccessUrl("/");
-    }
 }
