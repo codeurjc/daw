@@ -43,13 +43,19 @@ public class SecurityConfiguration {
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		
+		http.authenticationProvider(authenticationProvider());
+		
 		http
 			.authorizeHttpRequests(authorize -> authorize
+					// PUBLIC PAGES
 					.requestMatchers("/").permitAll()
+					// PRIVATE PAGES
 					.anyRequest().authenticated())
 			.formLogin(formLogin -> formLogin
 					.loginPage("/login")
 					.failureUrl("/loginerror")
+					.defaultSuccessUrl("/private")
 					.permitAll()
 			)
 			.logout(logout -> logout
@@ -57,9 +63,6 @@ public class SecurityConfiguration {
 					.logoutSuccessUrl("/")
 					.permitAll()
 			);
-
-		
-		http.authenticationProvider(authenticationProvider());
 		
 		// Disable CSRF at the moment
 		http.csrf(csrf -> csrf.disable());
