@@ -1,50 +1,70 @@
 package es.codeurjc.security;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+@EnableWebSecurity
+public class SecurityConfiguration {
 
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-
-		String encodedPassword = encoder.encode("pass");
-
-		auth.inMemoryAuthentication().withUser("user").password(encodedPassword).roles("USER");
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
+	@Bean
+	public DaoAuthenticationProvider authenticationProvider() {
+		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
 
-		// Public pages
-		http.authorizeRequests().antMatchers("/").permitAll();
-		http.authorizeRequests().antMatchers("/login").permitAll();
-		http.authorizeRequests().antMatchers("/loginerror").permitAll();
-		http.authorizeRequests().antMatchers("/logout").permitAll();
+		authProvider.setUserDetailsService(userDetailsService());
+		authProvider.setPasswordEncoder(passwordEncoder());
 
-		// Private pages (all other pages)
-		http.authorizeRequests().anyRequest().authenticated();
+		return authProvider;
+	}
 
-		// Login form
-		http.formLogin().loginPage("/login");
-		http.formLogin().usernameParameter("username");
-		http.formLogin().passwordParameter("password");
-		http.formLogin().defaultSuccessUrl("/private");
-		http.formLogin().failureUrl("/loginerror");
+	@Bean
+	public InMemoryUserDetailsManager userDetailsService() {
+		UserDetails user = User.builder()
+				.username("user")
+				.password(passwordEncoder().encode("pass"))
+				.roles("USER")
+				.build();
+		return new InMemoryUserDetailsManager(user);
+	}
 
-		// Logout
-		http.logout().logoutUrl("/logout");
-		http.logout().logoutSuccessUrl("/");
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		http
+			.authorizeHttpRequests(authorize -> authorize
+					.requestMatchers("/").permitAll()
+					.anyRequest().authenticated())
+			.formLogin(formLogin -> formLogin
+					.loginPage("/login")
+					.failureUrl("/loginerror")
+					.permitAll()
+			)
+			.logout(logout -> logout
+					.logoutUrl("/logout")
+					.logoutSuccessUrl("/")
+					.permitAll()
+			);
 
+		
+		http.authenticationProvider(authenticationProvider());
+		
 		// Disable CSRF at the moment
-		http.csrf().disable();
+		http.csrf(csrf -> csrf.disable());
+
+		return http.build();
 	}
 
 }
