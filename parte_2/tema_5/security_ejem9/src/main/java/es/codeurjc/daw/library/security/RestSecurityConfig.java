@@ -1,75 +1,83 @@
 package es.codeurjc.daw.library.security;
 
-import java.security.SecureRandom;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import es.codeurjc.daw.library.security.jwt.JwtRequestFilter;
 
 @Configuration
-public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
+@EnableWebSecurity
+public class RestSecurityConfig {
 
 	@Autowired
-	private UserDetailsService userDetailsService;
+    public RepositoryUserDetailsService userDetailService;
 
 	@Autowired
 	private JwtRequestFilter jwtRequestFilter;
-	
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder(10, new SecureRandom());
-	}
-	
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+		return new BCryptPasswordEncoder();
 	}
 
-	//Expose AuthenticationManager as a Bean to be used in other services
 	@Bean
-	@Override
-	public AuthenticationManager authenticationManagerBean() throws Exception {
-		return super.authenticationManagerBean();
+	public DaoAuthenticationProvider authenticationProvider() {
+		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+
+		authProvider.setUserDetailsService(userDetailService);
+		authProvider.setPasswordEncoder(passwordEncoder());
+
+		return authProvider;
 	}
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
+	@Bean
+	public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+		return authConfig.getAuthenticationManager();
+	}
 
-		// URLs that need authentication to access to it
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/books/**").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/books/**").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/books/**").hasRole("ADMIN");		
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		
-		// Other URLs can be accessed without authentication
-		http.authorizeRequests().anyRequest().permitAll();
-
-		// Disable CSRF protection (it is difficult to implement in REST APIs)
-		http.csrf().disable();
-
-		// Disable Http Basic Authentication
-		http.httpBasic().disable();
+		http.authenticationProvider(authenticationProvider());
 		
-		// Disable Form login Authentication
-		http.formLogin().disable();
-
-		// Avoid creating session 
-		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		http
+			.authorizeHttpRequests(authorize -> authorize
+                    // PRIVATE ENDPOINTS
+                    .requestMatchers(HttpMethod.POST,"/api/books/").hasRole("USER")
+                    .requestMatchers(HttpMethod.PUT,"/api/books/**").hasRole("USER")
+                    .requestMatchers(HttpMethod.DELETE,"/api/books/**").hasRole("ADMIN")
+					// PUBLIC ENDPOINTS
+					.anyRequest().permitAll()
+			);
 		
+        // Disable Form login Authentication
+        http.formLogin(formLogin -> formLogin.disable());
+
+        // Disable CSRF protection (it is difficult to implement in REST APIs)
+        http.csrf(csrf -> csrf.disable());
+
+        // Disable Basic Authentication
+        http.httpBasic(httpBasic -> httpBasic.disable());
+
+        // Stateless session
+        http.sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+
 		// Add JWT Token filter
 		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
+		return http.build();
 	}
+
 }
