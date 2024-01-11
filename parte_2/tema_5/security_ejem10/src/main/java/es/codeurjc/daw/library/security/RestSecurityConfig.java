@@ -1,10 +1,9 @@
 package es.codeurjc.daw.library.security;
 
-import java.security.SecureRandom;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -12,13 +11,13 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import es.codeurjc.daw.library.security.jwt.JwtRequestFilter;
 
 @Configuration
+@Order(1)
 public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
@@ -27,15 +26,14 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private JwtRequestFilter jwtRequestFilter;
 	
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder(10, new SecureRandom());
-	}
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
 	}
 
 	//Expose AuthenticationManager as a Bean to be used in other services
@@ -48,6 +46,8 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
+		http.antMatcher("/api/**");
+		
 		// URLs that need authentication to access to it
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/books/**").hasRole("USER");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/books/**").hasRole("USER");
