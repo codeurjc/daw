@@ -4,7 +4,7 @@ import { BookListComponent } from './components/books/book-list.component';
 import { BookDetailComponent } from './components/books/book-detail.component';
 import { BookFormComponent } from './components/books/book-form.component';
 
-const appRoutes = [
+const appRoutes: Routes = [
     { path: 'books', component: BookListComponent },
     { path: 'books/new', component: BookFormComponent },
     { path: 'books/:id', component: BookDetailComponent },
