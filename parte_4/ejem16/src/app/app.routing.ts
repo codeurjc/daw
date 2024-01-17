@@ -1,9 +1,9 @@
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { BookListComponent } from './book-list.component';
 import { BookDetailComponent } from './book-detail.component';
 
-const appRoutes = [
+const appRoutes: Routes = [
   { path: 'book/:id', component: BookDetailComponent,  },
   { path: 'books', component: BookListComponent },
   { path: '', redirectTo: 'books', pathMatch: 'full' }

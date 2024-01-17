@@ -14,24 +14,21 @@ import { PostDialogComponent } from './post-dialog/post-dialog.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WelcomeComponent,
-    DashboardComponent,
-    PostDialogComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    FlexLayoutModule,
-    AppRouters,
-    FormsModule,
-  ],
-  providers: [DataService, AuthService],
-  bootstrap: [AppComponent],
-  entryComponents: [
-    PostDialogComponent
-  ]
+    declarations: [
+        AppComponent,
+        WelcomeComponent,
+        DashboardComponent,
+        PostDialogComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        FlexLayoutModule,
+        AppRouters,
+        FormsModule,
+    ],
+    providers: [DataService, AuthService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
