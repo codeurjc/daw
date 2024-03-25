@@ -1,0 +1,30 @@
+{{>header}}
+
+<div>
+  <h2>Book "{{book.title}}"</h2>
+  {{#book.image}}
+  <img src="/books/{{book.id}}/image">
+  {{/book.image}}
+
+  {{^book.image}}
+  <img src="/images/no_image.png">
+  {{/book.image}}
+  <div>
+    <p>{{book.description}}</p>
+  </div>
+
+  <p>
+    {{#logged}}
+
+    {{#admin}}
+    <button onclick="location.href='/removebook/{{book.id}}'">Remove</button>
+    {{/admin}}
+
+    <button onclick="location.href='/editbook/{{book.id}}'">Edit</button>
+    {{/logged}}
+    <br>
+    <button onclick="location.href='/'">Back to all books</button>
+  </p>
+</div>
+
+{{>footer}}

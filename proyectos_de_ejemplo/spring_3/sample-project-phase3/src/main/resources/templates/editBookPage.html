@@ -1,0 +1,36 @@
+{{>header}}
+
+<form action="/editbook" method="post" enctype="multipart/form-data">
+  <h2>Book "{{book.title}}"</h2>
+  <input type="hidden" name="id" value="{{book.id}}" />
+  <div>
+    <label>Title: </label>
+    <input name="title" value="{{book.title}}" placeholder="title" />
+  </div>
+  <div>
+    <label>Abstract: </label>
+    <textarea name="description" placeholder="description">{{book.description}}</textarea>
+  </div>
+  <p>Image: </p>
+  
+  {{#book.image}}
+  <img src="/books/{{book.id}}/image">
+  <br><input type='checkbox' name='removeImage'> <label>Remove image</label><br>
+  {{/book.image}}
+
+  {{^book.image}}
+  <img src="/images/no_image.png"><br>  
+  {{/book.image}}
+
+  <label>Upload image: </label><br>  
+  <input type='file' name='imageField' accept=".jpg, .jpeg" />
+  <input type="hidden" name="_csrf" value="{{token}}" />
+  <br>
+  <br>
+  <p>
+    <button onclick="location.href='/books/{{book.id}}'; return false;">Cancel</button>
+    <input type="submit" value="Save" />
+  </p>
+</form>
+
+{{>footer}}
