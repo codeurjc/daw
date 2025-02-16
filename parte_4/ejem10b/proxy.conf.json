@@ -1,8 +1,0 @@
-{
-    "/books/*": {
-        "target": "https://www.googleapis.com/",
-        "secure": false,
-        "logLevel": "debug",
-        "changeOrigin": true
-    }
-}
