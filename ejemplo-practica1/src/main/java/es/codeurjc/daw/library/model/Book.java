@@ -33,10 +33,11 @@ public class Book {
 
 	public Book() {}
 
-	public Book(String nombre, String description) {
+	public Book(String nombre, String description, List<Shop> shops) {
 		super();
 		this.title = nombre;
 		this.description = description;
+		this.shops = shops;
 	}
 
 	public String getTitle() {

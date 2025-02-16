@@ -31,3 +31,5 @@ Los usuarios son:
 
 * Usuario: `user`, contraseña: `pass`
 * Usuario: `admin`, contraseña: `adminpass`
+
+Se puede acceder a través de la ruta: [https://localhost:8443](https://localhost:8443)
