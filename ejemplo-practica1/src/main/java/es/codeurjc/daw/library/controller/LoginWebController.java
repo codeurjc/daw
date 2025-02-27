@@ -1,17 +1,17 @@
 package es.codeurjc.daw.library.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class LoginWebController {
 	
-	@RequestMapping("/login")
+	@GetMapping("/login")
 	public String login() {
 		return "login";
 	}
 
-	@RequestMapping("/loginerror")
+	@GetMapping("/loginerror")
 	public String loginerror() {
 		return "loginerror";
 	}
