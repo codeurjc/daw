@@ -1,4 +1,4 @@
-# sample-project-phase2
+# Ejemplo Práctica 1
 
 Ejemplo que contiene algunas de las funcionalidades solicitadas en la Prática 1 del proyecto, en concreto:
 
