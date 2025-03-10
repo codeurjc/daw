@@ -21,7 +21,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import es.codeurjc.daw.library.dto.BookDTO;
 import es.codeurjc.daw.library.service.BookService;
-
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
 @RestController

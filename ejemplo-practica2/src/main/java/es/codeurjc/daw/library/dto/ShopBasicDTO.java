@@ -1,6 +1,6 @@
 package es.codeurjc.daw.library.dto;
 
 public record ShopBasicDTO(
-    long id,
+    Long id,
     String name,
     String address) {}

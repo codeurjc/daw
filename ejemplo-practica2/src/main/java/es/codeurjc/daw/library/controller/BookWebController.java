@@ -94,7 +94,7 @@ public class BookWebController {
 	@GetMapping("/newbook")
 	public String newBook(Model model) {
 
-		model.addAttribute("availableShops", shopService.findAll());
+		model.addAttribute("availableShops", shopService.getShops());
 
 		return "newBookPage";
 	}	
@@ -124,7 +124,7 @@ public class BookWebController {
 		
 		Set<Long> selectedShops = bookDTO.shops().stream().map(ShopBasicDTO::id).collect(Collectors.toSet());
 
-		List<SelectedShop> shopsWithSelected = shopService.findAll().stream()
+		List<SelectedShop> shopsWithSelected = shopService.getShops().stream()
 				.map(shop -> new SelectedShop(shop, selectedShops.contains(shop.id())))
 				.toList();
 

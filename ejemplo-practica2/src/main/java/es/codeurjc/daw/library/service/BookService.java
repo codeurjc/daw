@@ -15,12 +15,16 @@ import es.codeurjc.daw.library.dto.BookDTO;
 import es.codeurjc.daw.library.dto.BookMapper;
 import es.codeurjc.daw.library.model.Book;
 import es.codeurjc.daw.library.repository.BookRepository;
+import es.codeurjc.daw.library.repository.ShopRepository;
 
 @Service
 public class BookService {
 
 	@Autowired
 	private BookRepository bookRepository;
+
+	@Autowired
+	private ShopRepository shopRepository;
 
 	@Autowired
 	private BookMapper mapper;
@@ -44,6 +48,9 @@ public class BookService {
 		Book book = toDomain(bookDTO);
 
 		bookRepository.save(book);
+
+		//Load shop info from database to return shops in REST API
+		book.getShops().replaceAll(shop -> shopRepository.findById(shop.getId()).orElseThrow());
 
 		return toDTO(book);
 	}
@@ -81,9 +88,13 @@ public class BookService {
 
 		Book book = bookRepository.findById(id).orElseThrow();
 
+		//As books are related to shops, it is needed to load the book shops 
+		//before deleting it to avoid LazyInitializationException
+		BookDTO bookDTO = toDTO(book);
+
 		bookRepository.deleteById(id);
 
-		return toDTO(book);
+		return bookDTO;
 	}
 
 	public Resource getBookImage(long id) throws SQLException {

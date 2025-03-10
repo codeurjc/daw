@@ -1,8 +1,7 @@
 package es.codeurjc.daw.library.service;
 
-import java.util.List;
-import java.util.Optional;
-
+import java.sql.SQLException;
+import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,35 +13,77 @@ import es.codeurjc.daw.library.repository.ShopRepository;
 @Service
 public class ShopService {
 
-	@Autowired
-	private ShopRepository repository;
+    @Autowired
+    private ShopRepository shopRepository;
 
-	@Autowired
-	private ShopMapper mapper;
+    @Autowired
+    private ShopMapper mapper;
 
-	public Optional<Shop> findById(long id) {
-		return repository.findById(id);
-	}
+    public Collection<ShopBasicDTO> getShops() {
 
-	public List<Shop> findById(List<Long> ids){
-		return repository.findAllById(ids);
-	}
-	
-	public boolean exist(long id) {
-		return repository.existsById(id);
-	}
+        return toDTOs(shopRepository.findAll());
+    }
 
-	public List<ShopBasicDTO> findAll() {
-		return mapper.toDTOs(repository.findAll());
-	}
+    public ShopBasicDTO getShop(long id) {
 
-	public void save(Shop Shop) {
-		repository.save(Shop);
-	}
+        return toDTO(shopRepository.findById(id).orElseThrow());
+    }
 
-	public void delete(long id) {
-		repository.deleteById(id);
-	}
+    public ShopBasicDTO createShop(ShopBasicDTO shopDTO) {
 
-	
+        if(shopDTO.id() != null) {
+            throw new IllegalArgumentException();
+        }
+
+        Shop shop = toDomain(shopDTO);
+
+        shop = shopRepository.save(shop);
+
+        return toDTO(shop);
+    }
+
+    public ShopBasicDTO replaceShop(long id, ShopBasicDTO updatedShopDTO) throws SQLException {
+
+        shopRepository.findById(id).orElseThrow();
+
+        Shop updatedShop = toDomain(updatedShopDTO);
+        updatedShop.setId(id);
+
+        shopRepository.save(updatedShop);
+
+        return toDTO(updatedShop);
+    }
+
+    public ShopBasicDTO createOrReplaceShop(Long id, ShopBasicDTO shopDTO) throws SQLException {
+        
+        ShopBasicDTO shop;
+        if(id == null) {
+            shop = createShop(shopDTO);
+        } else {
+            shop = replaceShop(id, shopDTO);
+        }
+        return shop;
+    }
+
+    public ShopBasicDTO deleteShop(long id) {
+
+        Shop shop = shopRepository.findById(id).orElseThrow();
+
+        shopRepository.deleteById(id);
+
+        return toDTO(shop);
+    }
+
+    private ShopBasicDTO toDTO(Shop shop) {
+        return mapper.toDTO(shop);
+    }
+
+    private Shop toDomain(ShopBasicDTO shopDTO) {
+        return mapper.toDomain(shopDTO);
+    }
+
+    private Collection<ShopBasicDTO> toDTOs(Collection<Shop> shops) {
+        return mapper.toDTOs(shops);
+    }
+
 }

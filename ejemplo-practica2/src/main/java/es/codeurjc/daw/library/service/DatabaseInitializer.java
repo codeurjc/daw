@@ -22,7 +22,7 @@ import es.codeurjc.daw.library.repository.ShopRepository;
 import es.codeurjc.daw.library.repository.UserRepository;
 
 @Service
-public class SampleDataService {
+public class DatabaseInitializer {
 
 	@Autowired
 	private BookRepository bookRepository;
