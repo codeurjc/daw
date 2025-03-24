@@ -39,5 +39,11 @@ Los usuarios son:
 Se puede acceder a través de la ruta: [https://localhost:8443](https://localhost:8443)
 
 Nota: Para generar el certificado autofirmado se ha generado usando el comando  
-`keytool -genkey -keyalg RSA -alias selfsigned -keystore keystore.jks -storepass password -validity 360 -keysize 2048`
+```sh
+keytool -genkey -keyalg RSA -alias selfsigned -keystore keystore.jks -storepass password -validity 360 -keysize 2048
+```
 A la primera pregunta (tu nombre), hay que responder `localhost`. Si no, OpenAPI no podrá generar la documentación de la API REST.
+Para generar la documentación con OpenAPI usa el comando:
+```sh
+mvn verify -Djavax.net.ssl.trustStore=src/main/resources/keystore.jks -Djavax.net.ssl.trustStorePassword=passwordPassword=password
+```
