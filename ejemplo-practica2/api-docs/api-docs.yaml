@@ -1,0 +1,442 @@
+openapi: 3.1.0
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: https://localhost:8443
+  description: Generated server url
+paths:
+  /api/shops/{id}:
+    get:
+      tags:
+      - shop-rest-controller
+      operationId: getShop
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ShopBasicDTO"
+    put:
+      tags:
+      - shop-rest-controller
+      operationId: replaceShop
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ShopBasicDTO"
+        required: true
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ShopBasicDTO"
+    delete:
+      tags:
+      - shop-rest-controller
+      operationId: deleteShop
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ShopBasicDTO"
+  /api/books/{id}:
+    get:
+      tags:
+      - book-rest-controller
+      operationId: getBook
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/BookDTO"
+    put:
+      tags:
+      - book-rest-controller
+      operationId: replaceBook
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookDTO"
+        required: true
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/BookDTO"
+    delete:
+      tags:
+      - book-rest-controller
+      operationId: deleteBook
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/BookDTO"
+  /api/books/{id}/image:
+    get:
+      tags:
+      - book-rest-controller
+      operationId: getBookImage
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+    put:
+      tags:
+      - book-rest-controller
+      operationId: replaceBookImage
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                imageFile:
+                  type: string
+                  format: binary
+              required:
+              - imageFile
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+    post:
+      tags:
+      - book-rest-controller
+      operationId: createBookImage
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                imageFile:
+                  type: string
+                  format: binary
+              required:
+              - imageFile
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+    delete:
+      tags:
+      - book-rest-controller
+      operationId: deleteBookImage
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/shops/:
+    get:
+      tags:
+      - shop-rest-controller
+      operationId: getShops
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ShopBasicDTO"
+    post:
+      tags:
+      - shop-rest-controller
+      operationId: createShop
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ShopBasicDTO"
+        required: true
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ShopBasicDTO"
+  /api/books/:
+    get:
+      tags:
+      - book-rest-controller
+      operationId: getBooks
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/BookDTO"
+    post:
+      tags:
+      - book-rest-controller
+      operationId: createBook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookDTO"
+        required: true
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/BookDTO"
+  /api/auth/refresh:
+    post:
+      tags:
+      - login-controller
+      operationId: refreshToken
+      parameters:
+      - name: RefreshToken
+        in: cookie
+        required: false
+        schema:
+          type: string
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+  /api/auth/logout:
+    post:
+      tags:
+      - login-controller
+      operationId: logOut
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+  /api/auth/login:
+    post:
+      tags:
+      - login-controller
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+        required: true
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+  /api/users/me:
+    get:
+      tags:
+      - user-rest-controller
+      operationId: me
+      responses:
+        "404":
+          description: Not Found
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/UserDTO"
+components:
+  schemas:
+    ShopBasicDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        address:
+          type: string
+    BookDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        description:
+          type: string
+        image:
+          type: boolean
+        shops:
+          type: array
+          items:
+            $ref: "#/components/schemas/ShopBasicDTO"
+    AuthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - SUCCESS
+          - FAILURE
+        message:
+          type: string
+        error:
+          type: string
+    LoginRequest:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    UserDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        roles:
+          type: array
+          items:
+            type: string

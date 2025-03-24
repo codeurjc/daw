@@ -108,6 +108,10 @@ public class SecurityConfig {
 						.requestMatchers("/editbook").hasAnyRole("USER")
 						.requestMatchers("/editbook/*").hasAnyRole("USER")
 						.requestMatchers("/removebook/*").hasAnyRole("ADMIN")
+						// OpenAPI
+						.requestMatchers("/v3/api-docs*/**").permitAll()
+						.requestMatchers("/swagger-ui.html").permitAll()
+						.requestMatchers("/swagger-ui/**").permitAll()
 				)
 				.formLogin(formLogin -> formLogin
 						.loginPage("/login")
