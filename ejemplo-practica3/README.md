@@ -8,12 +8,13 @@ Este ejemplo incluye algunas de las funcionalidades requeridas en la **Práctica
 
 Para que la aplicación Angular funcione correctamente, primero es necesario ejecutar el backend (**una API REST implementada con Spring Boot**).  
 
-El código del backend se encuentra en la carpeta **`ejemplo-practica2`**.  
+El código del backend se encuentra en la carpeta **`backend`**.  
 
 Se puede ejecutar desde un IDE (Eclipse, Visual Studio Code, IntelliJ...) o desde la línea de comandos con Maven:  
 
 ```sh
 cd ejemplo-practica2
+./start_db.sh
 mvn spring-boot:run
 ```
 
@@ -22,7 +23,7 @@ mvn spring-boot:run
 Nos ubicamos en la carpeta del frontend:
 
 ```
-$ cd ejemplo-practica3
+$ cd frontend
 ```
 
 Instalamos las dependencias:
@@ -56,5 +57,5 @@ Podemos acceder a la aplicación Angular en:
 
 ## Distribución con el backend
 
-Para desplegar correctamente la **Práctica 3**, es necesario **compilar** la aplicación Angular y copiar los archivos generados en la carpeta de archivos estáticos del backend (ejemplo-practica2).
+Para desplegar correctamente la **Práctica 3**, es necesario **compilar** la aplicación Angular y copiar los archivos generados en la carpeta de archivos estáticos del backend.
 
