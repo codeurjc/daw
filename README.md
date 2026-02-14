@@ -1,5 +1,7 @@
 # Desarrollo de Aplicaciones Web
 
+[![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:890b7b34617d9dd22ced15332abbf663ac8cd469/)](https://archive.softwareheritage.org/swh:1:dir:890b7b34617d9dd22ced15332abbf663ac8cd469;origin=https://github.com/codeurjc/daw;visit=swh:1:snp:99354019ee1e662650885345e10fe042297df3d9;anchor=swh:1:rev:830cc3e2d9699e36863e73972dea1c43488e0835)
+
 Este repositorio contiene los ejemplos y ejercicios utilizados en la asignatura **Desarrollo de Aplicaciones Web**, perteneciente al **Grado en Ingeniería del Software** de la ETSII URJC.
 
 El objetivo es ofrecer material práctico que permita familiarizarse con las diferentes tecnologías involucradas en el desarrollo de aplicaciones web modernas, desde el backend hasta el frontend, pasando por el despliegue y la contenedorización.
@@ -146,6 +148,7 @@ Para trabajar con los proyectos de este repositorio necesitas tener instalado:
 
 **Enlaces del repositorio:**
 - 🔗 Repositorio GitHub: https://github.com/codeurjc/daw
+- 🔗 Repositorio Software Heritage: https://archive.softwareheritage.org/swh:1:dir:890b7b34617d9dd22ced15332abbf663ac8cd469
 
 ## 📄 Licencia
 
