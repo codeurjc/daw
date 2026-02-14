@@ -10,9 +10,7 @@ La segunda parte de la asignatura se enfoca en tecnologías de despliegue modern
 
 ## 📚 Contenido del Temario
 
-### 🐳 [Docker](docker/)
-
-**Tema 2: Contenedores y Docker**
+### 🐳 [Tema 2 - Docker](docker/)
 
 Fundamentos de contenedorización, creación de imágenes Docker y gestión de contenedores.
 
@@ -26,9 +24,7 @@ Fundamentos de contenedorización, creación de imágenes Docker y gestión de c
 
 ---
 
-### 🎼 [Docker Compose](docker-compose/)
-
-**Tema 3: Orquestación con Docker Compose**
+### 🎼 [Tema 3 - Docker Compose](docker-compose/)
 
 Definición y gestión de aplicaciones multi-contenedor con Docker Compose.
 
@@ -45,7 +41,7 @@ Definición y gestión de aplicaciones multi-contenedor con Docker Compose.
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **Docker Engine** 20.10+
-- **Docker Compose** 2.0+
+- **Docker Engine**
+- **Docker Compose**
 
 ---

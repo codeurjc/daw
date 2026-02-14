@@ -1,6 +1,6 @@
 # Parte 3: Tecnologías Web Avanzadas de Cliente con React
 
-Este directorio contiene ejemplos y ejercicios prácticos sobre el desarrollo de **aplicaciones web de cliente** (frontend) utilizando **React 18+** con **React Router**.
+Este directorio contiene ejemplos y ejercicios prácticos sobre el desarrollo de **aplicaciones web de cliente** (frontend) utilizando **React 19+**.
 
 ## 📋 Descripción General
 

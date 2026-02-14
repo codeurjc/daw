@@ -1,7 +1,5 @@
 # Desarrollo de Aplicaciones Web
 
-[![SWH](XXX)](XXX)
-
 Este repositorio contiene los ejemplos y ejercicios utilizados en la asignatura **Desarrollo de Aplicaciones Web**, perteneciente al **Grado en Ingeniería del Software** de la ETSII URJC.
 
 El objetivo es ofrecer material práctico que permita familiarizarse con las diferentes tecnologías involucradas en el desarrollo de aplicaciones web modernas, desde el backend hasta el frontend, pasando por el despliegue y la contenedorización.
@@ -27,7 +25,7 @@ Este repositorio incluye ejemplos y proyectos que utilizan las siguientes tecnol
 - Maven
 
 **Frontend:**
-- React 18+
+- React
 - JavaScript/TypeScript
 - HTML/CSS
 - React Router
@@ -51,8 +49,6 @@ daw/
 │   ├── docker/           # Ejemplos de Docker
 │   └── docker-compose/   # Ejemplos de Docker Compose
 ├── parte_3/              # Tecnologías web avanzadas de cliente (React)
-│   ├── ejem0-36/         # 37 ejemplos progresivos de React
-│   └── ejer1-8/          # 8 ejercicios prácticos de React
 ├── ejemplos_practica/    # Proyectos de ejemplo completos
 │   ├── ejemplo-practica1/  # Spring MVC + MySQL + Mustache
 │   └── ejemplo-practica2/  # API REST + Docker + OpenAPI
@@ -80,15 +76,12 @@ El temario de la asignatura se divide en las siguientes partes:
 📁 Los ejemplos y ejercicios de esta parte pueden encontrarse en **[parte_2/](parte_2/)**
 
 ### Parte 3. Tecnologías web avanzadas de cliente (React)
-* **Tema 1:** Introducción a React y JSX
-* **Tema 2:** Componentes y Props
-* **Tema 3:** Estado y eventos
-* **Tema 4:** Formularios y entrada de datos
-* **Tema 5:** Consumo de API REST y servicios
-* **Tema 6:** Enrutamiento con React Router
-* **Tema 7:** Context API y gestión de estado
-* **Tema 8:** Librerías UI (Bootstrap, Material UI)
-* **Tema 9:** Build y despliegue
+* **Tema 1:** Introducción
+* **Tema 2:** Componentes
+* **Tema 3:** REST y Servicios
+* **Tema 4:** Aplicaciones Multipagina - Router
+* **Tema 5:** Librerías de Componentes
+* **Tema 6:** Publicación
 
 📁 Los ejemplos y ejercicios de esta parte pueden encontrarse en **[parte_3/](parte_3/)** (37 ejemplos + 8 ejercicios)
 
@@ -152,7 +145,6 @@ Para trabajar con los proyectos de este repositorio necesitas tener instalado:
 💡 **Nota:** Este material está pensado como apoyo para el aprendizaje práctico de herramientas y tecnologías de desarrollo web moderno.
 
 **Enlaces del repositorio:**
-- 🔗 Repositorio Software Heritage: XXX
 - 🔗 Repositorio GitHub: https://github.com/codeurjc/daw
 
 ## 📄 Licencia

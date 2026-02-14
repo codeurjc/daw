@@ -10,9 +10,7 @@ Esta primera parte de la asignatura se enfoca en las tecnologías fundamentales 
 
 ## 📚 Contenido del Temario
 
-### 🌐 [Spring Web](spring_web/)
-
-**Tema 1: Fundamentos de Spring MVC**
+### 🌐 [Tema 1 - Spring Web](spring_web/)
 
 Introducción al desarrollo web con Spring MVC, manejo de controladores, vistas y datos.
 
@@ -31,9 +29,7 @@ Introducción al desarrollo web con Spring MVC, manejo de controladores, vistas 
 
 ---
 
-### 💾 [Spring Data](spring_data/)
-
-**Tema 2: Persistencia de Datos con JPA**
+### 💾 [Tema 2 - Spring Data](spring_data/)
 
 Gestión de bases de datos relacionales utilizando Spring Data JPA e Hibernate.
 
@@ -47,17 +43,12 @@ Gestión de bases de datos relacionales utilizando Spring Data JPA e Hibernate.
 - Repositorios Spring Data
 - Consultas personalizadas (JPQL, Query Methods)
 - Transacciones
-- Carga lazy vs eager
-- Caché de segundo nivel
-- Migraciones con Flyway
 
 **Base de datos:** MySQL
 
 ---
 
-### 🔐 [Spring Security](spring_security/)
-
-**Tema 3: Autenticación y Autorización**
+### 🔐 [Tema 3 - Spring Security](spring_security/)
 
 Implementación de mecanismos de seguridad en aplicaciones web.
 
@@ -77,11 +68,9 @@ Implementación de mecanismos de seguridad en aplicaciones web.
 
 ---
 
-### 🔌 [Spring REST](spring_rest/)
+### 🔌 [Tema 4 - Spring REST](spring_rest/)
 
-**Tema 4: API REST y Servicios Web**
-
-Desarrollo de APIs RESTful y consumo de servicios web.
+Desarrollo de APIs y consumo de servicios web.
 
 **Contenido:**
 - 17 ejemplos de API REST (`rest_ejem1` - `rest_ejem17`)
@@ -105,9 +94,7 @@ Desarrollo de APIs RESTful y consumo de servicios web.
 
 ---
 
-### 🚀 [Spring Deploy](spring_deploy/)
-
-**Tema 5: Despliegue de Aplicaciones**
+### 🚀 [Tema 5 - Spring Deploy](spring_deploy/)
 
 Empaquetar y desplegar aplicaciones Spring Boot en diferentes entornos.
 
@@ -115,11 +102,9 @@ Empaquetar y desplegar aplicaciones Spring Boot en diferentes entornos.
 - 2 ejemplos de despliegue (`despliegue_ejem1`, `despliegue_ejem2`)
 
 **Conceptos cubiertos:**
-- Empaquetado JAR y WAR
+- Empaquetado JAR
 - Configuración por perfiles (dev, prod)
 - Variables de entorno
-- Despliegue en servidores de aplicaciones
-- Configuración de producción
 
 ---
 
