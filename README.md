@@ -83,7 +83,7 @@ El temario de la asignatura se divide en las siguientes partes:
 * **Tema 5:** Librerías de Componentes
 * **Tema 6:** Publicación
 
-📁 Los ejemplos y ejercicios de esta parte pueden encontrarse en **[parte_3/](parte_3/)** (37 ejemplos + 8 ejercicios)
+📁 Los ejemplos y ejercicios de esta parte pueden encontrarse en **[parte_3/](parte_3/)**
 
 ## 🚀 Proyectos de Ejemplo
 
