@@ -1,0 +1,18 @@
+<html>
+<head>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+	<h1>Edit post</h1>
+	<form action="/posts/{{id}}/update" method="post">
+		<p>Title: </p>
+		<input type='text' name='title' value='{{post.title}}'/>
+		<p>Text:</p>
+		<textarea name='text'>{{post.text}}</textarea>
+		<br>
+		<br>
+
+		<input type='submit' value='Update'/>
+	</form>
+</body>
+</html>

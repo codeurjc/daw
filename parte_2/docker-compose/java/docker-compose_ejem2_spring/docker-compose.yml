@@ -1,0 +1,19 @@
+services:
+  web:
+    image: codigusdev/spring-webapp:mysql
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db/test
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=password
+    depends_on:
+      - db
+    restart: on-failure
+  db:
+    image: mysql:9.2
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=test
+    volumes:
+      - ./mysql:/var/lib/mysql

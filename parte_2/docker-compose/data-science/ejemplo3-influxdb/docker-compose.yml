@@ -1,0 +1,25 @@
+services:
+  jupyter:
+    image: codeurjc/analisis-partidos-futbol-influxdb
+    ports:
+      - 8888:8888
+    environment:
+      - JUPYTER_TOKEN=MY_SECRET
+      - INFLUXDB_HOST=http://influxdb3:8181
+      - INFLUXDB_DB=telemetry
+    depends_on:
+      - influxdb3
+    restart: on-failure
+    volumes:
+      - ./output:/home/jovyan/work/output
+  influxdb3:
+    image: influxdb:3-core
+    command:
+      - influxdb3
+      - serve
+      - --node-id=node0
+      - --object-store=file
+      - --data-dir=/var/lib/influxdb3
+      - --without-auth
+    volumes:
+      - ./influxdb3_data:/var/lib/influxdb3

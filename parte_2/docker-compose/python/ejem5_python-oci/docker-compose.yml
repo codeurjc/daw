@@ -1,0 +1,24 @@
+services:
+  web:
+    image: codeurjc/python-webgatos:mongo
+    ports:
+      - 5000:5000
+    environment:
+      - MONGODB_HOST=db
+      - MONGODB_PORT=27017
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: mongo:8.0-noble
+    volumes:
+      - db_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      start_period: 10s
+      retries: 5
+
+volumes:
+  db_data:

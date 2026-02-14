@@ -1,0 +1,39 @@
+<html>
+<body>
+	<h1>Player: {{ player.name }}</h1>
+
+	<p>Goals: {{ player.goals }}</p>
+
+	<ul>
+		{{#player.teams}}
+			<li>
+				{{ name }} 
+				<form action="/players/{{ player.id }}/remove_team/{{ id }}" method="post" style="display: inline;">
+					<input type='submit' value='Remove team'/>
+				</form>
+			</li>
+		{{/player.teams}}
+	</ul>
+
+	{{^player.teams}}
+		<p>No teams</p>
+	{{/player.teams}}
+
+	<form action="/players/{{ player.id }}/add_team/" method="post">
+		<select name='team_id'>
+			{{#teams}}
+				<option value='{{id}}'>{{name}}</option>
+			{{/teams}}
+		</select>
+		<input type='submit' value='Add team'/>
+	</form>
+
+	<form action="/players/{{ player.id }}/delete" method="post">
+		<input type='submit' value='Delete player'/>
+	</form>
+	
+	<br>
+	
+	<a href="/">Back</a>
+</body>
+</html>

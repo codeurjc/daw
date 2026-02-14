@@ -1,0 +1,18 @@
+<html>
+<head>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+    <h1>Edit Post</h1>
+	<form action="/editpost" method="post">
+		<p>Username: </p>	
+		<input type='text' name='username' value="{{post.username}}"/>
+		<p>Title:</p>
+		<input type='text' name='title'  value="{{post.title}}"/>
+		<p>Text:</p>
+		<textarea name='text' rows=5 cols=40>{{post.text}}</textarea>
+        <input type='hidden' name='id' value="{{post.id}}"/>
+		<input type='submit' value='Save'/>
+	</form>
+</body>
+</html>

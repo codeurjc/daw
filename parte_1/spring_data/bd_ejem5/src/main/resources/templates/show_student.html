@@ -1,0 +1,35 @@
+<html>
+<body>
+	<h1>Student details</h1>
+
+	<p>Name: {{student.name}}</p>
+	<p>Start Year: {{student.startYear}}</p>
+	
+	{{#student.project}}
+	Project: {{student.project.title}} ({{student.project.calification}})
+	<form action="/students/{{student.id}}/project/delete" method="post" style="display: inline;">
+		<input type='submit' value='Delete project'/>
+	</form>
+	</br>
+	{{/student.project}}
+
+	{{^student.project}}
+	<p>No project yet.</p>
+	<form action="/students/{{student.id}}/project" method="post" style="background-color: #c2c2c2; width: 200px; padding: 10px;">
+		<p>Title: </p>
+		<input type='text' name='title'/>
+		<p>Calification:</p>
+		<input type='number' name='calification'/>
+		<input type='submit' value='Add project'/>
+	</form>
+	{{/student.project}}
+
+	<form action="/students/{{student.id}}/delete" method="post">
+		<input type='submit' value='Delete student'/>
+	</form>
+	
+	<br>
+	
+	<a href="/">Back</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{{>header}}
+		
+<div>
+  <h2>Book "{{book.title}}"</h2>
+  <div>
+    <p>{{book.description}}</p>
+  </div>
+  <p>
+    {{#logged}}
+    
+    {{#admin}}
+    <form action="/removebook/{{book.id}}" method="post">
+      <input type="submit" value="Remove">
+      <input type="hidden" name="_csrf" value="{{token}}"/>
+    </form>
+		{{/admin}}
+    
+    	<button onclick="location.href='/editbook/{{book.id}}'">Edit</button>
+    {{/logged}}
+    <br>
+    <button onclick="location.href='/'">Back to all books</button>
+  </p>
+  </div>		
+
+{{>footer}}

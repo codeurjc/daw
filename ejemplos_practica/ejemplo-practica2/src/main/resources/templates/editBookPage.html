@@ -1,0 +1,53 @@
+{{>header}}
+
+<div class="container mt-4 mb-5">
+    <h2>Edit Book "{{book.title}}"</h2>
+
+    <form action="/editbook" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{{book.id}}" />
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" id="title" value="{{book.title}}" placeholder="Title"
+                required />
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Abstract</label>
+            <textarea name="description" class="form-control" id="description" placeholder="Description" rows="4"
+                required>{{book.description}}</textarea>
+        </div>
+
+        <p><b>Image:</b></p>
+
+        {{#book.image}}
+        <img src="/images/{{book.image.id}}" class="img-fluid mb-3" alt="Book Image">
+        <div class="form-check">
+            <input type="checkbox" name="removeImage" class="form-check-input" id="removeImage">
+            <label class="form-check-label" for="removeImage">Remove Image</label>
+        </div>
+        <div class="mb-3">
+            <label for="updateImage" class="form-label">Update Image</label>
+        </div>
+        {{/book.image}}
+
+        {{^book.image}}
+        <img src="/assets/images/no_image.png" class="img-fluid mb-3" alt="No Image">
+        <div class="mb-3">
+            <label for="uploadImage" class="form-label">Upload Image</label>
+        </div>
+        {{/book.image}}
+
+        <input type="file" name="imageField" accept=".jpg, .jpeg" class="form-control mb-3" />
+
+        <input type="hidden" name="_csrf" value="{{token}}" />
+
+        <div class="mb-3">
+            <button type="button" onclick="location.href='/books/{{book.id}}';"
+                class="btn btn-secondary">Cancel</button>
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+{{>footer}}

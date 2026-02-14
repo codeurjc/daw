@@ -1,0 +1,20 @@
+{{>header}}
+
+  <form action="/newbook" method="post">
+  <h2>New Book</h2>
+  <div>
+    <label>Title: </label>
+    <input name="title" placeholder="title"/>
+  </div>
+  <div>
+    <label>Abstract: </label>
+    <textarea name="description" placeholder="description"></textarea>
+  </div>
+  <input type="hidden" name="_csrf" value="{{token}}"/>
+  <p>
+    <button onclick="location.href='/'; return false;">Cancel</button>
+    <input type="submit" value="Save"/>
+  </p>
+  </form>
+  
+{{>footer}}

@@ -1,0 +1,46 @@
+{{>header}}
+
+<div class="container mt-4 mb-5">
+    <h2>Book "{{book.title}}"</h2>
+
+    {{#book.image}}
+    <img src="/images/{{book.image.id}}" class="img-fluid mb-4" alt="Book Image">
+    {{/book.image}}
+
+    {{^book.image}}
+    <img src="/assets/images/no_image.png" class="img-fluid mb-4" alt="No Image">
+    {{/book.image}}
+
+    <div>
+        <p>{{book.description}}</p>
+    </div>
+
+    <p><b>Shops where book is available:</b></p>
+    <div>
+        <ul class="list-group">
+            {{#book.shops}}
+            <li class="list-group-item">{{name}}</li>
+            {{/book.shops}}
+        </ul>
+    </div>
+
+    <div class="mt-4">
+        {{#logged}}
+        <div class="btn-group">
+            {{#admin}}
+            <form action="/removebook/{{book.id}}" method="post" style="display: inline;">
+                <button type="submit" class="btn btn-danger">Remove</button>
+                <input type="hidden" name="_csrf" value="{{token}}" />
+            </form>
+            {{/admin}}
+
+            <a href="/editbook/{{book.id}}" class="btn btn-warning">Edit</a>
+        </div>
+        {{/logged}}
+
+        <br>
+        <a href="/" class="btn btn-secondary mt-3">Back to all books</a>
+    </div>
+</div>
+
+{{>footer}}

@@ -1,0 +1,30 @@
+<html>
+
+<body>
+	<h1>Football</h1>
+
+	<h3>Players</h3>
+	{{#players}}
+		<a href="/players/{{id}}">{{name}}</a>
+		<br>
+	{{/players}}
+
+	{{^players}}
+	<p>No players yet.</p>
+	{{/players}}
+
+	<h3>Teams</h3>
+	{{#teams}}
+		<a href="/teams/{{id}}">{{name}}</a>
+		<br>
+	{{/teams}}
+
+	{{^teams}}
+	<p>No teams yet.</p>
+	{{/teams}}
+
+	<br>
+	<a href="new_team.html">New Team</a>
+</body>
+
+</html>

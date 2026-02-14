@@ -1,0 +1,17 @@
+<html>
+
+<body>
+
+	<h3>Players</h3>
+	{{#players}}
+		<a href="/players/{{id}}">{{name}}</a>
+		<br>
+	{{/players}}
+
+	{{^players}}
+	<p>No players yet.</p>
+	{{/players}}
+
+</body>
+
+</html>

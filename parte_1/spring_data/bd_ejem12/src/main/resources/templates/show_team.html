@@ -1,0 +1,35 @@
+<html>
+<body>
+	<h1>Team: {{team.name}}</h1>
+
+	<p>Ranking: {{team.ranking}}</p>
+
+	<h3>Players</h3>
+	{{#team.players}}
+		<a href="/players/{{id}}">{{name}}</a>
+		<br>
+	{{/team.players}}
+
+	{{^team.players}}
+		<p>No players yet.</p>
+	{{/team.players}}
+
+	<br>
+	
+	<h1>Add player</h1>
+	<form action="/teams/{{ team.id }}/players/new" method="post" style="background-color: #c2c2c2; width: 200px; padding: 10px;">
+		<p>Name: </p>	
+		<input type='text' name='name'/>
+		<p>Goals</p>
+		<input type='number' name='goals'/>
+
+		<input type='submit' value='Save'/>
+	</form>
+
+	<form action="/teams/{{ team.id }}/delete" method="post">
+		<input type='submit' value='Delete team'/>
+	</form>
+
+	<a href="/">Back</a>
+</body>
+</html>

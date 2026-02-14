@@ -1,0 +1,23 @@
+<html>
+<body>
+	<h1>Player: {{ player.name }}</h1>
+
+	<p>Goals: {{ player.goals }}</p>
+
+	{{#player.team}}
+		<p>Team: {{ name }}</p>
+	{{/player.team}}
+
+	{{^player.team}}
+		<p>Team: No team</p>
+	{{/player.team}}
+
+	<form action="/players/{{ player.id }}/delete" method="post">
+		<input type='submit' value='Delete player'/>
+	</form>
+	
+	<br>
+	
+	<a href="/">Back</a>
+</body>
+</html>

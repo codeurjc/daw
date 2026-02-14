@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "e5834f33-1247-4fd9-b0df-4b9a1c2a8cfa",
+		"name": "Posts with Images",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "51604803",
+		"_collection_link": 24851696
+	},
+	"item": [
+		{
+			"name": "GET Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/posts/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/posts/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"Alberto\", \"title\": \"Cambio bici\", \"text\": \"MTB por carretera\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/posts/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"Alberto\", \"title\": \"xxxxx bici\", \"text\": \"MTB por flaca\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/posts/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/posts/3",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"posts",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Image",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imageFile",
+							"type": "file",
+							"src": "/home/mica/git/spring/spring_rest/rest_ejem12_images/src/main/resources/sampledata_images/coche.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/posts/1/images/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"posts",
+						"1",
+						"images",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/images/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"images",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Image File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/images/1/media",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"images",
+						"1",
+						"media"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Image File",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imageFile",
+							"type": "file",
+							"src": "/home/mica/git/spring/spring_rest/rest_ejem12_images/src/main/resources/sampledata_images/moto.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/images/1/media",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"images",
+						"1",
+						"media"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Image",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/posts/1/images/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"posts",
+						"1",
+						"images",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "127.0.0.1:3000"
+		}
+	]
+}

@@ -1,0 +1,16 @@
+services:
+
+  drupal:
+    image: drupal:10.4.6
+    ports:
+      - 8080:80
+
+  mysql:
+    image: mysql:9.2
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    volumes:
+      - ./mysql:/var/lib/mysql

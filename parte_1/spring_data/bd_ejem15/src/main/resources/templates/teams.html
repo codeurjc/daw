@@ -1,0 +1,19 @@
+<html>
+
+<body>
+
+	<h3>Teams</h3>
+	{{#teams}}
+		<a href="/teams/{{id}}">{{name}}</a>
+		<br>
+	{{/teams}}
+
+	{{^teams}}
+	<p>No teams yet.</p>
+	{{/teams}}
+
+	<br>
+	<a href="new_team.html">New Team</a>
+</body>
+
+</html>

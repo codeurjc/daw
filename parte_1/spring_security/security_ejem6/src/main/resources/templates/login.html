@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form action="/login" method="post">
+		<label>Username:</label><input type="text" name="username" /><br/>
+		<label>Password:</label><input type="password" name="password" /><br/>
+		<input type="hidden" name="_csrf" value="{{token}}"/>
+		<input type="submit" value="Sign In"/>
+	</form>
+</body>
+</html>

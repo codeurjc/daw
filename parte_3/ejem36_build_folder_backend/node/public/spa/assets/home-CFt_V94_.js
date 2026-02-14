@@ -1,0 +1,1 @@
+import{w as i,x as t,p as s,O as a}from"./chunk-EPOLDU6W-jf5jzJVn.js";const c=i(function(){const n=t().state==="loading";return s.jsxs("div",{children:[s.jsxs("h1",{children:["Library ",n&&s.jsx("span",{className:"spinner"})]}),s.jsx("div",{style:{opacity:n?.5:1},children:s.jsx(a,{})})]})});export{c as default};

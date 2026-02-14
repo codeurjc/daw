@@ -1,0 +1,29 @@
+<html>
+<body>
+	<h1>School</h1>
+
+	<h3>Students</h3>
+	{{#students}}
+	<a href="/students/{{id}}">{{name}}</a>
+	<br>
+	{{/students}}
+	
+	{{^students}}
+	<p>No students yet.</p>
+	{{/students}}
+
+	<h3>Projects</h3>
+	<ul>
+	{{#projects}}
+		<li>{{title}} ({{calification}})</li>
+	{{/projects}}
+	</ul>
+	
+	{{^projects}}
+	<p>No projects yet.</p>
+	{{/projects}}
+
+	<br>
+	<a href="new_student.html">New Student</a>
+</body>
+</html>

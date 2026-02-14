@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <h1>New post</h1>
+    <form action="/posts/new" method="post" enctype="multipart/form-data">
+        <p>Title: </p>
+        <input type='text' name='title' />
+        <p>Text:</p>
+        <textarea name='text'></textarea>
+        <br>
+        <p>Image 1:</p>
+        <input type='file' name='imageOneFile' />
+        <br>
+        <p>Image 2:</p>
+        <input type='file' name='imageTwoFile' />
+        <br>
+        <br>
+        <input type='submit' value='Save' />
+    </form>
+</body>
+
+</html>

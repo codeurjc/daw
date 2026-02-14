@@ -1,0 +1,40 @@
+<html>
+<body>
+	<h1>Post details</h1>
+
+	<p>Title: {{post.title}}</p>
+	<p>Text: {{post.text}}</p>
+	
+	<h2>Comments</h2>
+	{{#post.comments}}
+		<div>
+			<b>{{author}}</b>: {{message}}
+			<form action="/posts/{{post.id}}/comments/{{id}}/delete" method="post" style="display: inline;">
+				<input type='submit' value='Delete comment'/>
+			</form>
+		</div>
+		<br>
+		
+	{{/post.comments}}
+
+	{{^post.comments}}
+	<p>No comments yet.</p>
+	{{/post.comments}}
+
+	<form action="/posts/{{post.id}}/comments/new" method="post" style="background-color: #c2c2c2; width: 200px; padding: 10px;">
+		<p>Author: <input type='text' name='author'/></p>
+		<p>Message: <input type='text' name='message'/></p>
+		<input type='submit' value='Add comment'/>
+	</form>
+
+	<form action="/posts/{{post.id}}/delete" method="post">
+		<input type='submit' value='Delete post'/>
+	</form>
+
+	<a href="/posts/{{post.id}}/edit">Edit post</a>
+	
+	<br>
+	
+	<a href="/">Back</a>
+</body>
+</html>

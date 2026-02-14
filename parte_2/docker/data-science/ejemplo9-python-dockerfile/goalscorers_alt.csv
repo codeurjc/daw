@@ -1,0 +1,329 @@
+date,home_team,away_team,team,scorer,minute,own_goal,penalty
+2023-10-26,Crystal Palace,Luton Town,Crystal Palace,Carlos C.,59,,nan
+2023-10-25,Bournemouth,Tottenham,Bournemouth,Luis D.,29,,nan
+2023-10-10,Newcastle Utd,Tottenham,Newcastle Utd,Luis E.,94,,nan
+2023-09-16,Crystal Palace,Leicester,Crystal Palace,Pedro J.,80,,nan
+2023-09-21,Newcastle Utd,Arsenal,Arsenal,A P.,56,,nan
+2023-10-28,Fulham,Sheffield Utd,Fulham,Joel B.,3,,nan
+2023-10-27,Bournemouth,Nottingham Forest,Bournemouth,Carlos G.,30,,nan
+2023-10-21,Fulham,Liverpool,Liverpool,Marco J.,36,,nan
+2023-09-18,Brighton,Luton Town,Luton Town,Carlos C.,30,1.0,nan
+2023-09-27,Brighton,Man City,Brighton,Pedro A.,67,,nan
+2023-09-11,Newcastle Utd,Tottenham,Tottenham,Pedro J.,20,,pen
+2023-10-27,Burnley,Nottingham Forest,Nottingham Forest,J R.,53,,nan
+2023-09-18,Everton,Arsenal,Arsenal,Alex F.,34,,nan
+2023-10-19,Burnley,Wolves,Wolves,Luis B.,3,,nan
+2023-10-30,Everton,Sheffield Utd,Sheffield Utd,J I.,33,,nan
+2023-09-27,Burnley,Chelsea,Burnley,G D.,44,,pen
+2023-10-27,Everton,Tottenham,Tottenham,Joel F.,32,,nan
+2023-09-20,West Ham,Liverpool,West Ham,Pablo M.,58,,nan
+2023-10-02,Brentford,Wolves,Brentford,C L.,70,,nan
+2023-09-03,Burnley,Nottingham Forest,Burnley,Pedro C.,37,,pen
+2023-10-25,Bournemouth,Man City,Bournemouth,Carlos E.,48,,nan
+2023-10-30,Burnley,Wolves,Wolves,Ivan H.,5,,nan
+2023-10-04,Bournemouth,Luton Town,Luton Town,Marco E.,94,,nan
+2023-10-17,Aston Villa,Arsenal,Aston Villa,Luis C.,18,,nan
+2023-10-11,Burnley,Nottingham Forest,Nottingham Forest,Marco C.,66,,pen
+2023-10-07,Everton,Man City,Everton,C M.,55,,nan
+2023-10-29,West Ham,Liverpool,West Ham,D M.,41,,pen
+2023-09-18,Newcastle Utd,Sheffield Utd,Sheffield Utd,Ivan B.,28,,nan
+2023-09-17,Fulham,Tottenham,Tottenham,Ruben M.,21,,nan
+2023-10-22,Crystal Palace,Sheffield Utd,Crystal Palace,Pedro H.,67,,pen
+2023-10-15,Bournemouth,Sheffield Utd,Bournemouth,David C.,50,,nan
+2023-10-24,Burnley,Arsenal,Burnley,F C.,31,,nan
+2023-10-20,West Ham,Chelsea,Chelsea,Pablo F.,38,,nan
+2023-10-25,Burnley,Sheffield Utd,Sheffield Utd,David H.,89,,nan
+2023-09-10,Crystal Palace,Liverpool,Crystal Palace,David F.,55,,nan
+2023-09-17,Crystal Palace,Sheffield Utd,Crystal Palace,Pedro D.,29,,nan
+2023-10-29,Burnley,Sheffield Utd,Burnley,Carlos D.,63,,nan
+2023-10-17,Burnley,Man City,Burnley,Pedro M.,92,,nan
+2023-09-03,Bournemouth,Sheffield Utd,Bournemouth,B D.,13,,nan
+2023-10-14,Bournemouth,Nottingham Forest,Nottingham Forest,Joel C.,92,,nan
+2023-09-22,West Ham,Nottingham Forest,West Ham,Ivan D.,47,,nan
+2023-10-17,Burnley,Tottenham,Tottenham,C P.,39,,pen
+2023-09-24,Brentford,Man City,Man City,E P.,88,,nan
+2023-10-01,Brighton,Chelsea,Brighton,Luis G.,87,,nan
+2023-09-02,Bournemouth,Luton Town,Bournemouth,Alex H.,18,,nan
+2023-09-03,Everton,Chelsea,Chelsea,Ivan F.,66,,nan
+2023-09-24,Aston Villa,Sheffield Utd,Aston Villa,J C.,64,,nan
+2023-10-18,Fulham,Leicester,Leicester,Joel H.,1,,nan
+2023-10-25,Brentford,Sheffield Utd,Sheffield Utd,David H.,60,,pen
+2023-09-15,Fulham,Nottingham Forest,Nottingham Forest,F L.,93,,nan
+2023-10-04,Brentford,Sheffield Utd,Brentford,Luis H.,73,,pen
+2023-09-27,Brentford,Tottenham,Tottenham,B C.,60,,nan
+2023-09-23,Everton,Arsenal,Everton,Pedro G.,55,,pen
+2023-10-09,Newcastle Utd,Liverpool,Newcastle Utd,Marco M.,55,,nan
+2023-10-01,Brentford,Sheffield Utd,Brentford,Pablo M.,11,,nan
+2023-10-22,Newcastle Utd,Arsenal,Arsenal,Ruben M.,21,,nan
+2023-10-09,West Ham,Nottingham Forest,West Ham,Joel A.,16,,pen
+2023-10-14,Bournemouth,Tottenham,Bournemouth,G L.,5,,nan
+2023-10-17,Crystal Palace,Sheffield Utd,Sheffield Utd,Ruben E.,45,,pen
+2023-10-19,Aston Villa,Leicester,Aston Villa,David J.,94,,nan
+2023-10-06,Crystal Palace,Man City,Man City,D C.,27,,nan
+2023-10-09,Aston Villa,Wolves,Wolves,Carlos E.,45,,nan
+2023-10-03,Fulham,Leicester,Leicester,Pablo D.,78,,nan
+2023-10-30,Everton,Man City,Man City,Joel C.,48,,pen
+2023-09-05,Fulham,Tottenham,Tottenham,Marco F.,44,,nan
+2023-09-04,Crystal Palace,Arsenal,Arsenal,B I.,39,,nan
+2023-10-15,Newcastle Utd,Chelsea,Chelsea,J A.,61,,nan
+2023-09-11,Newcastle Utd,Chelsea,Chelsea,Carlos A.,44,,nan
+2023-09-10,Bournemouth,Chelsea,Bournemouth,Joel E.,70,,nan
+2023-09-18,Brighton,Chelsea,Chelsea,Carlos C.,50,,nan
+2023-10-29,Bournemouth,Arsenal,Arsenal,Carlos J.,18,,pen
+2023-09-04,Aston Villa,Tottenham,Tottenham,Carlos A.,17,,nan
+2023-10-20,Crystal Palace,Luton Town,Crystal Palace,Ruben C.,41,,nan
+2023-09-26,Crystal Palace,Arsenal,Arsenal,D M.,93,,nan
+2023-10-07,Fulham,Wolves,Wolves,Ruben M.,71,,nan
+2023-09-03,Burnley,Luton Town,Burnley,Ivan E.,19,,nan
+2023-09-06,Crystal Palace,Wolves,Crystal Palace,Luis F.,91,,pen
+2023-09-19,Everton,Man City,Everton,F P.,30,,nan
+2023-10-12,Brentford,Liverpool,Brentford,A L.,81,,nan
+2023-09-25,Everton,Wolves,Wolves,Luis A.,15,,pen
+2023-09-13,Everton,Tottenham,Everton,Carlos A.,61,,nan
+2023-09-19,Burnley,Luton Town,Burnley,M A.,13,,nan
+2023-09-14,West Ham,Liverpool,West Ham,Pedro A.,50,,nan
+2023-09-24,Newcastle Utd,Tottenham,Newcastle Utd,B C.,36,,nan
+2023-10-06,Everton,Arsenal,Everton,A P.,44,,nan
+2023-09-04,Burnley,Arsenal,Burnley,David J.,78,,nan
+2023-10-17,Brentford,Sheffield Utd,Brentford,Carlos D.,42,,nan
+2023-09-05,Everton,Liverpool,Liverpool,Marco D.,67,,nan
+2023-09-04,Everton,Arsenal,Everton,F R.,3,,nan
+2023-09-20,Bournemouth,Tottenham,Tottenham,Ivan H.,67,,nan
+2023-10-03,Burnley,Liverpool,Liverpool,Pedro H.,21,,nan
+2023-10-16,Newcastle Utd,Nottingham Forest,Newcastle Utd,David B.,59,,nan
+2023-09-22,Burnley,Liverpool,Burnley,Luis F.,4,,nan
+2023-10-29,Fulham,Wolves,Fulham,M C.,36,,nan
+2023-10-10,Brighton,Sheffield Utd,Sheffield Utd,Pedro G.,61,,nan
+2023-10-06,Bournemouth,Tottenham,Bournemouth,Pedro D.,10,,nan
+2023-09-23,West Ham,Chelsea,Chelsea,C D.,74,,nan
+2023-10-14,Aston Villa,Luton Town,Luton Town,Pablo J.,10,,nan
+2023-09-03,Bournemouth,Chelsea,Bournemouth,G D.,80,,nan
+2023-09-26,Everton,Wolves,Everton,Joel F.,49,,nan
+2023-10-17,Bournemouth,Leicester,Leicester,G R.,15,,nan
+2023-09-16,Everton,Chelsea,Everton,Pablo D.,74,,nan
+2023-09-07,Fulham,Leicester,Leicester,Pablo A.,91,,nan
+2023-09-18,Newcastle Utd,Nottingham Forest,Nottingham Forest,Ivan G.,92,,nan
+2023-09-23,Brentford,Luton Town,Brentford,J A.,82,1.0,nan
+2023-10-05,Burnley,Wolves,Wolves,Alex D.,88,1.0,nan
+2023-10-16,Crystal Palace,Leicester,Leicester,Ivan G.,46,,nan
+2023-09-08,Everton,Luton Town,Everton,Alex F.,47,,pen
+2023-10-07,Crystal Palace,Wolves,Crystal Palace,J R.,29,,nan
+2023-10-03,Burnley,Man City,Burnley,E I.,6,,pen
+2023-09-26,Fulham,Luton Town,Luton Town,Pedro J.,57,,nan
+2023-10-23,Everton,Leicester,Leicester,Alex D.,69,,nan
+2023-10-06,Aston Villa,Wolves,Aston Villa,J M.,70,,nan
+2023-10-06,Brentford,Luton Town,Brentford,E I.,36,1.0,pen
+2023-10-03,Burnley,Wolves,Wolves,Carlos M.,43,,nan
+2023-09-28,West Ham,Man City,Man City,David G.,41,,pen
+2023-10-22,Burnley,Luton Town,Luton Town,Alex M.,53,,nan
+2023-10-06,West Ham,Man City,West Ham,Joel B.,6,,nan
+2023-09-15,Everton,Chelsea,Everton,Ivan D.,21,,nan
+2023-10-28,Fulham,Nottingham Forest,Fulham,Ruben D.,3,,nan
+2023-09-28,West Ham,Chelsea,West Ham,B R.,79,,nan
+2023-10-23,Crystal Palace,Tottenham,Tottenham,Alex B.,30,,nan
+2023-09-22,Bournemouth,Man City,Man City,Luis E.,67,,nan
+2023-10-20,Fulham,Leicester,Leicester,David G.,15,,nan
+2023-09-07,Everton,Luton Town,Luton Town,Carlos E.,56,,nan
+2023-09-29,Bournemouth,Sheffield Utd,Sheffield Utd,D L.,90,,nan
+2023-10-11,Aston Villa,Nottingham Forest,Nottingham Forest,E J.,71,,nan
+2023-09-10,Fulham,Man City,Fulham,Ruben M.,90,,nan
+2023-09-06,Brighton,Tottenham,Tottenham,Ivan H.,50,,nan
+2023-10-18,Crystal Palace,Chelsea,Crystal Palace,G P.,9,,nan
+2023-10-14,Brentford,Sheffield Utd,Sheffield Utd,Pablo J.,84,,nan
+2023-10-10,Bournemouth,Luton Town,Bournemouth,Alex G.,60,1.0,nan
+2023-10-29,Everton,Wolves,Everton,Alex H.,84,,pen
+2023-09-28,Burnley,Sheffield Utd,Sheffield Utd,Ivan H.,18,,nan
+2023-10-13,Fulham,Chelsea,Chelsea,H J.,71,,nan
+2023-09-25,Burnley,Leicester,Leicester,Joel C.,69,,nan
+2023-09-14,West Ham,Luton Town,West Ham,Ruben C.,32,,nan
+2023-10-12,Crystal Palace,Liverpool,Crystal Palace,Luis H.,75,,nan
+2023-10-24,Aston Villa,Nottingham Forest,Aston Villa,J I.,51,,nan
+2023-09-20,Aston Villa,Nottingham Forest,Aston Villa,Ivan B.,93,,nan
+2023-10-26,Fulham,Man City,Man City,Ivan E.,87,,nan
+2023-09-11,Brentford,Man City,Man City,Ivan M.,93,,nan
+2023-09-18,Burnley,Wolves,Burnley,A I.,36,,nan
+2023-10-07,Brentford,Tottenham,Tottenham,D M.,95,,nan
+2023-10-24,Brighton,Liverpool,Brighton,David H.,73,,pen
+2023-09-13,Burnley,Chelsea,Chelsea,E D.,35,,nan
+2023-09-26,Newcastle Utd,Wolves,Wolves,Ruben F.,76,,nan
+2023-10-27,Burnley,Arsenal,Burnley,H C.,84,,pen
+2023-10-26,Bournemouth,Chelsea,Chelsea,A L.,5,,pen
+2023-09-03,Everton,Leicester,Everton,Carlos G.,91,,nan
+2023-10-16,Aston Villa,Sheffield Utd,Aston Villa,Joel G.,74,,nan
+2023-09-01,Burnley,Nottingham Forest,Burnley,Luis G.,10,,nan
+2023-09-08,West Ham,Luton Town,Luton Town,Joel H.,49,,nan
+2023-10-20,Crystal Palace,Man City,Man City,Joel H.,7,,nan
+2023-10-05,Aston Villa,Sheffield Utd,Aston Villa,B M.,74,,nan
+2023-10-06,Everton,Man City,Man City,Pedro J.,50,,pen
+2023-10-03,West Ham,Arsenal,West Ham,Marco C.,85,,nan
+2023-10-03,Aston Villa,Sheffield Utd,Sheffield Utd,Carlos G.,78,,nan
+2023-10-13,Fulham,Wolves,Wolves,Carlos H.,7,,nan
+2023-09-10,Fulham,Chelsea,Fulham,Alex F.,10,,nan
+2023-10-11,Burnley,Wolves,Wolves,F C.,40,,nan
+2023-10-03,Everton,Wolves,Wolves,Joel C.,61,,nan
+2023-09-19,Brighton,Nottingham Forest,Nottingham Forest,C M.,14,,nan
+2023-10-10,Bournemouth,Leicester,Bournemouth,J P.,39,,nan
+2023-09-14,Everton,Luton Town,Luton Town,Marco M.,13,,nan
+2023-10-16,Burnley,Sheffield Utd,Burnley,Carlos A.,59,,pen
+2023-09-24,West Ham,Wolves,West Ham,Ruben F.,34,,nan
+2023-10-05,Crystal Palace,Luton Town,Luton Town,Pedro F.,42,,nan
+2023-09-07,Crystal Palace,Nottingham Forest,Crystal Palace,Carlos G.,69,,nan
+2023-09-27,Brentford,Arsenal,Brentford,Pedro G.,58,,nan
+2023-09-23,West Ham,Nottingham Forest,Nottingham Forest,Ruben D.,60,,nan
+2023-09-24,Brighton,Liverpool,Brighton,Pablo D.,94,,nan
+2023-10-16,Aston Villa,Nottingham Forest,Aston Villa,Luis C.,61,,nan
+2023-10-14,Crystal Palace,Man City,Crystal Palace,B I.,68,,nan
+2023-09-05,Burnley,Nottingham Forest,Nottingham Forest,Alex J.,20,,pen
+2023-10-21,West Ham,Liverpool,West Ham,H D.,30,,nan
+2023-09-09,Bournemouth,Liverpool,Bournemouth,Alex D.,7,,pen
+2023-09-02,Brentford,Luton Town,Luton Town,G P.,45,,nan
+2023-10-26,Aston Villa,Tottenham,Aston Villa,Pedro D.,82,,nan
+2023-09-08,Burnley,Arsenal,Arsenal,D D.,51,,nan
+2023-10-20,Newcastle Utd,Sheffield Utd,Newcastle Utd,Ruben G.,45,,nan
+2023-10-24,West Ham,Wolves,Wolves,Joel D.,21,,nan
+2023-10-08,Burnley,Luton Town,Luton Town,F D.,15,,nan
+2023-10-28,Fulham,Arsenal,Arsenal,Alex F.,4,,nan
+2023-10-04,Newcastle Utd,Nottingham Forest,Nottingham Forest,Joel C.,37,,nan
+2023-09-30,Fulham,Sheffield Utd,Sheffield Utd,Carlos H.,59,1.0,nan
+2023-09-24,Brentford,Arsenal,Arsenal,Carlos A.,74,1.0,nan
+2023-09-21,Crystal Palace,Arsenal,Crystal Palace,Carlos F.,71,,nan
+2023-09-21,Crystal Palace,Luton Town,Crystal Palace,Carlos G.,9,,nan
+2023-09-12,Crystal Palace,Nottingham Forest,Crystal Palace,Carlos E.,77,,nan
+2023-10-23,Everton,Luton Town,Luton Town,Ruben F.,85,,pen
+2023-10-19,Everton,Sheffield Utd,Sheffield Utd,David B.,1,,nan
+2023-10-03,Aston Villa,Nottingham Forest,Nottingham Forest,C L.,71,,nan
+2023-09-06,Everton,Man City,Man City,Alex D.,41,,nan
+2023-10-28,West Ham,Wolves,Wolves,Alex M.,55,,nan
+2023-09-11,Burnley,Chelsea,Burnley,Ruben C.,7,,nan
+2023-10-27,Brentford,Nottingham Forest,Brentford,D I.,89,,nan
+2023-10-11,Crystal Palace,Liverpool,Crystal Palace,Ivan E.,27,,pen
+2023-10-18,Brighton,Wolves,Brighton,Carlos B.,6,,nan
+2023-09-15,Newcastle Utd,Liverpool,Newcastle Utd,Marco E.,64,,pen
+2023-09-01,West Ham,Nottingham Forest,West Ham,Carlos M.,78,,nan
+2023-10-08,Crystal Palace,Wolves,Wolves,Pedro H.,48,,nan
+2023-10-01,Burnley,Luton Town,Luton Town,Joel J.,89,,nan
+2023-09-10,Everton,Sheffield Utd,Sheffield Utd,Marco F.,81,,nan
+2023-09-03,Everton,Tottenham,Tottenham,Marco E.,41,,nan
+2023-10-22,Brentford,Arsenal,Brentford,Marco D.,69,,nan
+2023-09-24,Brentford,Nottingham Forest,Brentford,Alex J.,11,,pen
+2023-09-28,Newcastle Utd,Nottingham Forest,Nottingham Forest,Pedro F.,95,,nan
+2023-10-22,Burnley,Liverpool,Burnley,Luis M.,18,,nan
+2023-10-07,Crystal Palace,Liverpool,Liverpool,Luis A.,41,,nan
+2023-09-24,West Ham,Sheffield Utd,Sheffield Utd,Luis H.,42,,nan
+2023-09-13,Bournemouth,Arsenal,Bournemouth,David J.,8,,nan
+2023-10-08,Brentford,Leicester,Brentford,Carlos G.,74,,nan
+2023-09-09,Brentford,Wolves,Brentford,C L.,8,,nan
+2023-10-10,Burnley,Tottenham,Tottenham,E J.,7,,nan
+2023-10-29,West Ham,Chelsea,Chelsea,Alex H.,87,,nan
+2023-09-09,Everton,Leicester,Leicester,David H.,65,,nan
+2023-10-20,Brentford,Chelsea,Brentford,Ivan H.,19,,nan
+2023-10-09,Aston Villa,Arsenal,Arsenal,Pablo A.,87,,nan
+2023-09-12,Brentford,Arsenal,Brentford,Carlos H.,87,,nan
+2023-09-20,Everton,Wolves,Wolves,Ruben E.,45,,nan
+2023-10-26,Everton,Wolves,Wolves,H I.,54,,nan
+2023-10-28,Fulham,Arsenal,Arsenal,Carlos E.,74,,nan
+2023-09-07,Brighton,Man City,Man City,Luis G.,65,,nan
+2023-10-10,Bournemouth,Luton Town,Luton Town,Marco J.,80,,nan
+2023-10-29,Fulham,Chelsea,Chelsea,F P.,62,,nan
+2023-09-10,Crystal Palace,Arsenal,Arsenal,David A.,25,,nan
+2023-09-08,Brighton,Nottingham Forest,Brighton,Alex E.,59,,nan
+2023-10-11,West Ham,Sheffield Utd,West Ham,Pablo M.,7,,pen
+2023-09-17,Crystal Palace,Arsenal,Arsenal,A C.,17,,pen
+2023-10-02,Bournemouth,Tottenham,Tottenham,Pedro H.,58,,nan
+2023-09-18,Brentford,Sheffield Utd,Brentford,Luis B.,81,,nan
+2023-09-14,Everton,Nottingham Forest,Nottingham Forest,D I.,26,,nan
+2023-10-26,West Ham,Luton Town,West Ham,Marco C.,30,,nan
+2023-09-18,Aston Villa,Man City,Man City,Pedro E.,20,,nan
+2023-10-02,Everton,Luton Town,Luton Town,M I.,82,,nan
+2023-09-16,Crystal Palace,Luton Town,Crystal Palace,Ruben J.,45,,nan
+2023-10-29,Newcastle Utd,Nottingham Forest,Nottingham Forest,Pedro G.,22,,nan
+2023-09-28,Crystal Palace,Tottenham,Tottenham,H P.,31,,nan
+2023-09-15,Aston Villa,Chelsea,Chelsea,David E.,5,,nan
+2023-09-10,Burnley,Arsenal,Arsenal,M P.,44,,nan
+2023-09-29,Burnley,Wolves,Burnley,Carlos H.,31,,nan
+2023-09-25,Brentford,Luton Town,Luton Town,Ivan E.,2,,nan
+2023-10-15,West Ham,Tottenham,Tottenham,Carlos D.,85,,nan
+2023-10-02,Newcastle Utd,Tottenham,Tottenham,Ruben J.,67,,nan
+2023-09-30,Aston Villa,Liverpool,Aston Villa,Marco J.,79,,nan
+2023-09-08,Brighton,Arsenal,Brighton,Alex J.,7,,nan
+2023-09-27,Fulham,Man City,Fulham,F I.,92,,pen
+2023-09-27,Brentford,Arsenal,Brentford,Joel H.,65,,nan
+2023-10-23,Brentford,Leicester,Brentford,G M.,61,,nan
+2023-09-17,Brighton,Sheffield Utd,Brighton,Pablo H.,61,,nan
+2023-09-27,Brentford,Sheffield Utd,Brentford,B J.,16,,nan
+2023-09-12,Newcastle Utd,Leicester,Newcastle Utd,Carlos H.,82,,pen
+2023-09-10,West Ham,Tottenham,West Ham,Pablo C.,19,,nan
+2023-09-27,Everton,Man City,Man City,Joel D.,23,,nan
+2023-10-08,Aston Villa,Man City,Aston Villa,Pablo B.,22,,nan
+2023-09-01,Bournemouth,Luton Town,Bournemouth,Carlos D.,33,,nan
+2023-09-08,Burnley,Luton Town,Luton Town,Ruben D.,94,,nan
+2023-10-27,Brighton,Tottenham,Brighton,Ruben B.,89,,pen
+2023-09-28,Brentford,Man City,Brentford,M L.,33,,nan
+2023-09-10,Crystal Palace,Wolves,Crystal Palace,Joel D.,70,,nan
+2023-10-17,West Ham,Tottenham,West Ham,Marco D.,13,,nan
+2023-10-15,Burnley,Arsenal,Burnley,F R.,90,1.0,nan
+2023-09-25,Burnley,Sheffield Utd,Burnley,Pedro C.,29,,nan
+2023-10-07,Crystal Palace,Man City,Man City,E R.,62,,pen
+2023-09-20,Fulham,Tottenham,Tottenham,Luis G.,37,,nan
+2023-10-19,Newcastle Utd,Man City,Man City,M J.,80,,nan
+2023-09-06,Burnley,Luton Town,Luton Town,Luis M.,12,,nan
+2023-10-05,Brighton,Liverpool,Liverpool,David E.,55,,pen
+2023-09-14,Bournemouth,Nottingham Forest,Bournemouth,Pedro J.,2,,nan
+2023-09-25,Fulham,Liverpool,Fulham,B A.,49,,nan
+2023-10-07,Crystal Palace,Chelsea,Crystal Palace,Marco E.,91,,pen
+2023-09-12,Crystal Palace,Luton Town,Luton Town,D D.,19,,pen
+2023-10-03,Everton,Wolves,Wolves,Carlos H.,84,,nan
+2023-10-09,Fulham,Wolves,Fulham,Marco D.,86,,pen
+2023-09-24,Bournemouth,Wolves,Bournemouth,E L.,11,,nan
+2023-09-10,Aston Villa,Tottenham,Tottenham,David M.,22,,nan
+2023-09-22,Crystal Palace,Liverpool,Liverpool,D P.,78,,nan
+2023-09-01,Brentford,Wolves,Wolves,H P.,37,,nan
+2023-10-10,Burnley,Sheffield Utd,Burnley,Carlos J.,28,,pen
+2023-09-02,Burnley,Chelsea,Chelsea,Ivan M.,36,1.0,pen
+2023-10-13,West Ham,Luton Town,West Ham,H P.,23,,pen
+2023-10-03,Aston Villa,Liverpool,Liverpool,Ivan A.,62,,nan
+2023-09-08,Fulham,Leicester,Leicester,H R.,30,,pen
+2023-10-21,Brentford,Tottenham,Tottenham,David C.,57,,pen
+2023-09-05,Brentford,Wolves,Wolves,Luis C.,17,,nan
+2023-09-12,Aston Villa,Luton Town,Luton Town,Alex J.,78,,nan
+2023-10-26,Newcastle Utd,Chelsea,Newcastle Utd,Marco J.,55,,nan
+2023-09-21,Everton,Wolves,Wolves,Pablo C.,67,,nan
+2023-10-06,Bournemouth,Luton Town,Luton Town,Marco D.,80,,nan
+2023-09-24,Fulham,Sheffield Utd,Sheffield Utd,Marco C.,13,,nan
+2023-09-09,Brentford,Man City,Brentford,Luis J.,75,,nan
+2023-10-11,Aston Villa,Luton Town,Aston Villa,Marco A.,92,,nan
+2023-09-01,Everton,Liverpool,Liverpool,David E.,10,,nan
+2023-09-10,Bournemouth,Wolves,Wolves,Carlos J.,14,,nan
+2023-09-27,Crystal Palace,Nottingham Forest,Nottingham Forest,David A.,75,,nan
+2023-09-25,West Ham,Wolves,West Ham,Alex F.,30,,nan
+2023-09-07,Brentford,Arsenal,Arsenal,Pablo M.,83,,nan
+2023-09-26,Burnley,Tottenham,Burnley,C L.,48,,nan
+2023-10-09,West Ham,Liverpool,West Ham,Luis F.,30,,nan
+2023-09-15,Crystal Palace,Liverpool,Liverpool,Alex C.,61,,nan
+2023-09-01,Brighton,Tottenham,Brighton,Pablo G.,88,,nan
+2023-10-18,Everton,Luton Town,Everton,Luis B.,85,,pen
+2023-09-16,West Ham,Arsenal,Arsenal,Alex G.,38,,nan
+2023-10-23,Crystal Palace,Sheffield Utd,Crystal Palace,David M.,81,1.0,nan
+2023-10-01,West Ham,Sheffield Utd,Sheffield Utd,Pablo F.,69,,nan
+2023-09-30,Brentford,Liverpool,Liverpool,Ruben G.,57,,nan
+2023-10-08,Crystal Palace,Man City,Man City,Ivan G.,41,,pen
+2023-10-14,Fulham,Liverpool,Liverpool,Luis H.,32,,nan
+2023-10-23,Crystal Palace,Arsenal,Crystal Palace,Carlos B.,41,,nan
+2023-10-26,Brentford,Liverpool,Brentford,C A.,10,,nan
+2023-09-28,West Ham,Man City,West Ham,Pablo B.,67,,nan
+2023-10-03,Fulham,Nottingham Forest,Nottingham Forest,Alex F.,23,,nan
+2023-10-30,West Ham,Leicester,Leicester,H P.,78,,nan
+2023-09-29,Fulham,Wolves,Wolves,Pedro G.,83,,nan
+2023-09-12,Burnley,Luton Town,Burnley,Pablo C.,33,,nan
+2023-09-16,Fulham,Sheffield Utd,Fulham,J I.,12,,nan
+2023-09-21,Burnley,Wolves,Burnley,Alex A.,23,,nan
+2023-10-04,Everton,Arsenal,Everton,E C.,80,,nan
+2023-10-10,Burnley,Nottingham Forest,Burnley,Luis F.,78,,nan
+2023-10-09,Newcastle Utd,Chelsea,Chelsea,Marco G.,63,,nan
+2023-10-28,Brentford,Luton Town,Brentford,H A.,14,,nan
+2023-09-23,Aston Villa,Leicester,Leicester,Pablo J.,11,,nan
+2023-09-29,West Ham,Man City,West Ham,G P.,51,,pen
+2023-10-15,West Ham,Wolves,West Ham,Ruben H.,26,,nan
+2023-10-03,Everton,Nottingham Forest,Everton,C D.,90,,nan
+2023-09-08,Newcastle Utd,Man City,Newcastle Utd,E R.,34,,nan
+2023-09-28,Brighton,Tottenham,Brighton,F R.,42,,nan

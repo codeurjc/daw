@@ -1,0 +1,23 @@
+{{>header}}
+
+<h2 class="mt-4 mb-4">Books</h2>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {{#books}}
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title"><a href="/books/{{id}}" class="text-decoration-none text-dark">{{title}}</a></h5>
+            </div>
+        </div>
+    </div>
+    {{/books}}
+</div>
+
+{{#logged}}
+<div class="mt-4">
+    <button onclick="location.href='/newbook'" class="btn btn-primary">New Book</button>
+</div>
+{{/logged}}
+
+{{>footer}}
